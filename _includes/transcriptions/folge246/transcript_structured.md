@@ -549,4 +549,8 @@ Vielen Dank für die Einladung.
 Super.
 Und allen Zuhörern noch einen schönen Abend.
 Bis zum nächsten Mal.
+<<<<<<< HEAD
 Bis bald, tschüssi.
+=======
+Bis bald, tschüssi.
+>>>>>>> b9ddfdf (moved transcriptions to _includes)

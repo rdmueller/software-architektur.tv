@@ -1,5 +1,4 @@
 # Folge 245 - KI in der Software-Entwicklung - Über- oder unterhypt?
-
 ## Einführung in KI in der Software-Entwicklung
 
 Hallo und herzlich willkommen zu einer neuen Episode von Software-Architektur im Stream.
@@ -690,4 +689,8 @@ Genau.
 Ich packe den Chat auf jeden Fall nochmal zum Download in dieses Internet, also auf diese Webseite, die wir haben, dass man das nachlesen kann.
 Super, gute Idee.
 Ja, dann danke euch allen, danke euch ZuschauerInnen und schöne Feiertage, erholsame Feiertage und einen guten Rutsch ins neue Jahr.
+<<<<<<< HEAD
 Genau, guten Rutsch.
+=======
+Genau, guten Rutsch.
+>>>>>>> b9ddfdf (moved transcriptions to _includes)

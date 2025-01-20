@@ -1,4 +1,4 @@
-# Folge 245 - KI in der Software-Entwicklung - Über- oder unterhypt?
+# KI in der Softwareentwicklung: Über- oder unterhypt?
 
 In der heutigen Episode von "Software-Architektur im Stream" diskutieren wir ein Thema, das die Technologiebranche in jüngster Zeit stark polarisiert hat: Künstliche Intelligenz in der Softwareentwicklung und die damit verbundenen Erwartungen und Realitäten. Mit einer spannenden Runde von Experten – André, Stefan, Ralf und Eberhard – gehen wir der Frage nach, ob KI in der Softwareentwicklung über- oder unterhypt ist.
 
@@ -47,29 +47,3 @@ Die Diskussion hat gezeigt, dass das Thema Künstliche Intelligenz in der Softwa
 Eine klare Botschaft schwingt in der Diskussion mit: Lernen, Experimentieren und befinden, wo KI sinnvoll eingesetzt werden kann und wo Grenzen bestehen, werden entscheidend für die nächste Phase in der Softwareentwicklung sein. Wir dürfen gespannt sein, wohin diese Reise führt. 
 
 Vielen Dank fürs Zuhören und bis zur nächsten Episode!
-
-
-## Key Takeaways
-1. **Hypothesen über KI**: Die Ansichten über die Relevanz von KI in der Software-Entwicklung sind gespalten – von unterhypet bis überhypet.
-2. **Technologische Entwicklungen**: Der Fortschritt von LLMs wird als entscheidend für die Zukunft der Software-Entwicklung angesehen.
-3. **Herausforderungen des Prompt Engineering**: Die Qualität der Ausgaben der KI hängt stark von der Qualität der Eingaben ab.
-4. **Veränderung der Entwicklungsprozesse**: KI wird wahrscheinlich die Art und Weise, wie Software entwickelt wird, fundamental verändern (z.B. Low-Code/No-Code).
-5. **Risiken von Monokulturen**: Die Dominanz bestimmter LLMs könnte zu technologischen Monokulturen führen.
-
-## Wichtige Fragen in der Folge
-1. Ist KI in der Software-Entwicklung über- oder unterhypet?
-2. Welche technologischen Trends beeinflussen die Entwicklung von KI-Tools?
-3. Wie können Entwickler und Unternehmen KI effektiv in ihre Prozesse integrieren?
-4. Was sind die möglichen langfristigen Konsequenzen einer Abhängigkeit von KI?
-5. Wie kann der Wissenstransfer zwischen Mensch und Maschine gewährleistet werden?
-
-## Glossar
-- **LLM (Large Language Model)**: Ein KI-Modell, das mit einer großen Menge an Textdaten trainiert wird und in der Lage ist, menschenähnlichen Text zu generieren.
-- **Prompt Engineering**: Die Praxis, Eingaben (Prompts) zu gestalten und zu optimieren, um die gewünschten Ausgaben von KI-Modellen zu erhalten.
-- **Low-Code/No-Code**: Entwicklungsansätze, die es Nutzern ermöglichen, Software ohne oder mit minimalen Programmierkenntnissen zu erstellen.
-- **Monokultur**: Eine Abhängigkeit oder Dominanz eines einzelnen Typs von Technologie, die potenziell zu einem erhöhten Risiko von Fehlern und Nachteilen führt.
-<<<<<<< HEAD
-- **Change Management**: Strategien zur Handhabung und Begleitung von Veränderungen innerhalb einer Organisation.
-=======
-- **Change Management**: Strategien zur Handhabung und Begleitung von Veränderungen innerhalb einer Organisation.
->>>>>>> b9ddfdf (moved transcriptions to _includes)
