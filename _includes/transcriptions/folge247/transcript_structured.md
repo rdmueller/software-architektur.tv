@@ -519,8 +519,4 @@ Das ist ein System für Visualisierung von Systemen mit dem Richard Groß.
 Das ist einer der Menschen, die daran arbeiten.
 Da freue ich mich drauf.
 Vielleicht sehen wir uns da.
-<<<<<<< HEAD
 Ansonsten wünsche ich ein schönes Wochenende und bis zum nächsten Mal.
-=======
-Ansonsten wünsche ich ein schönes Wochenende und bis zum nächsten Mal.
->>>>>>> b9ddfdf (moved transcriptions to _includes)
