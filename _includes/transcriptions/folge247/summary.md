@@ -36,8 +36,4 @@ Die Diskussion über verpflichtende Code-Analyse und Metriken zeigt, wie Metrike
 - **Microservices**: Eine Architektur, die Anwendungen aus kleineren, unabhängigen Diensten zusammensetzt, die jeweils eigene Funktionen erfüllen.
 - **Domain Driven Design**: Ein Ansatz zur Softwareentwicklung, der sich auf die Modellierung komplexer Softwarelösungen basierend auf der Fachdomäne konzentriert.
 - **Guthards Law**: Ein Prinzip, das besagt, dass wenn eine Metrik ein Ziel wird, sie aufhört, ein zuverlässiger Indikator zu sein. 
-<<<<<<< HEAD
 - **Leap of Faith**: Ein vertrauensvoller Schritt, bei dem man in unsichere Situationen geht, basierend auf Vertrauen in die Fähigkeiten anderer.
-=======
-- **Leap of Faith**: Ein vertrauensvoller Schritt, bei dem man in unsichere Situationen geht, basierend auf Vertrauen in die Fähigkeiten anderer.
->>>>>>> b9ddfdf (moved transcriptions to _includes)
