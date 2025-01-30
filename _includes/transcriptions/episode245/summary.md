@@ -68,8 +68,4 @@ Vielen Dank fürs Zuhören und bis zur nächsten Episode!
 - **Prompt Engineering**: Die Praxis, Eingaben (Prompts) zu gestalten und zu optimieren, um die gewünschten Ausgaben von KI-Modellen zu erhalten.
 - **Low-Code/No-Code**: Entwicklungsansätze, die es Nutzern ermöglichen, Software ohne oder mit minimalen Programmierkenntnissen zu erstellen.
 - **Monokultur**: Eine Abhängigkeit oder Dominanz eines einzelnen Typs von Technologie, die potenziell zu einem erhöhten Risiko von Fehlern und Nachteilen führt.
-<<<<<<< HEAD
 - **Change Management**: Strategien zur Handhabung und Begleitung von Veränderungen innerhalb einer Organisation.
-=======
-- **Change Management**: Strategien zur Handhabung und Begleitung von Veränderungen innerhalb einer Organisation.
->>>>>>> b9ddfdf (moved transcriptions to _includes)
