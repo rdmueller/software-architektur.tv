@@ -1,0 +1,237 @@
+# Episode 238 - Learning Systems Thinking with Diana Montalion and Lisa Schäfer Hallo, ich bin Eberhard Wolff.
+Freitags mache ich oder Lisa Moritz einen Livestream zum Thema Software-Architektur, oft zusammen mit Gästen.
+Dieser Podcast ist das Audio des Streams.
+Weitere Folgen, Sketchnotes und vieles mehr findet ihr unter software-architektur.tv.
+Software-Architektur im Stream.
+Hallo und willkommen bei Software-Architektur im Stream.
+Ich hoffe, ihr seht und hört uns gerade.
+Ich bin mir nicht sicher, aber wir haben Eberhard als Backup dabei, damit er vielleicht sagen kann, dass alles funktioniert.
+Ich bin mir immer noch nicht sicher, weil wir...
+Alles funktioniert.
+Okay, weil ich im Livestream nicht sehen kann.
+Danke, Eberhard, für die kleine Note.
+Willkommen zu einem neuen Episode von Software-Architektur im Stream.
+Heutes Gast ist Diana Montalion.
+Willkommen, Diana.
+Danke, Lisa.
+Wir reden über ihr neues Buch, Learning Systems Thinking.
+Ich habe hier eine Kopie, damit ich sie manchmal in die Kamera legen kann.
+Wir reden über Systems Thinking im Allgemeinen, glaube ich.
+In der Chat-Seite könnt ihr eure Fragen stellen, wenn ihr welche habt.
+Ihr bekommt einen 15-Prozentigen Discount-Code für Tickets für die Software-Architektur-Gemeinschaft in Berlin nächste Woche.
+Diana wird zwei Mal sprechen.
+Das erste Mal ist am Montag von neun bis fünf mit einem Workshop, glaube ich, Systems Architecture Life Experience.
+Aber das ist bereits verkauft, wenn ich das Programm angeschaut habe.
+Und am Dienstag von 15.15 Uhr bis 16.00 Uhr redet sie über Architektur, Design und Wissensfluss.
+Willkommen, Diana.
+Jetzt reden wir über dein Buch und über Systems Thinking.
+Aber zuerst einmal, wer bist du und was machst du?
+Ich bin Systems Architekt und der Gründer von Metrix.
+Außerdem leite ich eine gewisse Anzahl Anleitungen und schreibe und spreche.
+Im Moment bin ich in Berlin, um mich für die nächste Konferenz vorbereiten zu können.
+Ich spreche über den Fakt, dass das Wi-Fi vor dem Start nicht funktioniert und mein Handy nicht auf dem Hotspot funktioniert.
+Also hat mein Freund Javier einen Hotspot.
+Was ich gerade tue, ist technologisch zu sprechen.
+Sehr cool.
+Und du warst schon mal ein Gäste in einer Software-Architektur-Stream.
+Ich werde das auch in der Chat-Seite posten, weil du fast zwei Jahre zuvor hier warst, am 7.
+Oktober.
+War das so?
+Ja, es war der 7.
+Oktober.
+Und es ging um nicht-lineares Denken.
+Und vielleicht kannst du uns allen erzählen, weil du dein Buch geschrieben hast, Learning System Thinking.
+Ist System Thinking das gleiche wie nicht-lineares Denken oder ist es etwas anderes?
+Ja, es ist das gleiche.
+Und einer der Herausforderungen ist, dass ...
+O'Reilly mag den Titel und wollte den Titel Learning Systems Thinking.
+Und das war tatsächlich ein sehr schlauer Weg.
+Nichts, was ich schäme.
+Aber in der Tat gibt es viele verschiedene Ansprüche zu Denken und Kommunikation, die nicht technisch System Thinking sind, aber auch, was ich meine, wie Pattern Thinking.
+Edward DiBonos Arbeit beschreibt auch nicht-lineares Denken.
+Teams, die lernfähige Teams oder Lernorganisationen sind, wie in Peter Sengers 5.
+Disziplin, die auch System Thinking ist.
+Und in verschiedenen Bereichen wie Akademie gegen Ingenieurwissenschaften gegen Marketing könntest du einen System Thinking-Kurs nehmen und es würde eine ziemlich breite Vielfalt von Dingen betreffen.
+Und wir können uns wirklich nicht mit einer spezifischen Definition zu beruhigen.
+Obwohl ich in dem Buch definiere, was ich meine und was der Buch macht.
+Aber es ist im Grunde genommen die Antithesis von linearem Denken und Reduktionismus und Dingen, die wir alle praktizieren und täglich benötigen.
+Es wird also unsere Werkstatt als Softwareprofessionale vergrößern, indem wir mehr Art und Weise hinzufügen, Software-Systeme zu denken.
+Gibt es ein konkretes Beispiel für eine Art von nicht-linearem Denken?
+Ja, also linearer Denken handelt es sich um Top-Down-Kontrolle und Proceduralität und darum, Dinge so sicher wie möglich zu machen und prädiktabel zu machen.
+Wenn wir an Denken denken, ist das normalerweise das, was wir denken.
+Und sicherlich, wenn wir an Code denken, denken wir an Proceduralität und Prädiktabilität und wir sind sehr konzentriert auf Kontrolle.
+Wenn wir die Werkstatt für Systems-Denken hinzufügen, sind wir mehr konzentriert darauf, wie Beziehungen Auswirkungen erzeugen.
+Also zum Beispiel, anstatt spezifisch, wie ein Stück Software gekodet wird oder ein weiteres Stück Software gekodet wird, obwohl das definitiv wichtig ist, denken wir darüber, wie, wenn diese beiden Stücke Software in Beziehung zu einem anderen sind, man Verhältnisse, Formen und Ergebnisse hat, die keiner alleine erreichen kann.
+Es ist die Beziehung zwischen ihnen.
+Das selbe gilt für Menschen.
+Wenn wir auf Lösungen in der Technologie schauen, wenn wir Kubernetes hinzufügen, können wir unser Problem lösen, dann denken wir nur über einen Teil des Systems.
+Aber wenn wir darüber nachdenken, wie der Code, den wir schreiben, das System insgesamt verbessert, oder wie Menschen mit ihm interagieren, wie es Revenuen generiert, wie einige der Formen, die wir benutzen, uns helfen, die Beziehungen zwischen Software-Teilen zu verbessern, dann denken wir über das System.
+Und die Herausforderung ist, dass es um abstraktes Denken geht.
+Und ich würde sagen, Code ist eine Abstraktion.
+Wir schreiben nicht wirklich Eins und Zero in der Erinnerung.
+Das Wort Konkret kommt oft auf.
+Ich habe ein Bild von der molekularen Struktur von Konkret.
+Es sieht sehr aus wie ein Software-System.
+Eigentlich ist es die molekulare Struktur von einem Teil davon, weil Konkret eine Mischung aus anderen Dingen ist.
+Eine der Herausforderungen ist, dass wir als Kultur die Vorstellung haben, was wir Konkret-Denken nennen.
+Aber wenn man über Systeme denkt, muss man sehr vorsichtig sein, wo man das Konkret reinfügt.
+Denn Konkret ist sehr schwer zu verändern, sehr schwer zu bewegen, und es definiert sehr viel, wie Dinge funktionieren.
+Wenn wir es als einen Akzess denken, wie der xy-Akzess, wenn wir über ein System denken, wenn wir ein System bauen, denken wir über verschiedene Perspektiven dieses Systems, also über diesen Akzess.
+Aber wir denken auch über und unter die Makro- und Microschale.
+Wie diese sehr konkrete technische Entscheidung dem Software-System hilft, was wir wollen, im gesamten Domain zu tun, einen Einfluss zu haben.
+Wir denken, das System ist eher, anstatt Kontrolle zu haben, um einen Einfluss zu haben.
+Wir wollen, dass das Arbeiten, das wir tun, positiv einen Einfluss hat, egal in welchen Umständen wir versuchen zu verbessern.
+Wenn Sie darüber sprechen, klingt es so kompliziert, in Systemen zu denken, weil Sie all diese verschiedenen Angelegenheiten haben, Sie haben all diese verschiedenen Dinge, die in Ihrem Geist kommen müssen, um etwas Gutes darin zu bilden.
+Geben Sie Tipps oder Vorstellungen, wie man in Systemen denkt, ohne, ich weiß nicht, auszubrennen oder verrückt zu werden?
+Es ist viel zu denken.
+Es ist.
+Diese Frage kam letztes Mal.
+Ich habe darüber viel gesprochen.
+Ich habe schon gesagt, dass ich schon so viel zu denken habe.
+Es klingt, als ob Sie mich fragen, über alles zu denken.
+Die Realität ist, dass, wenn wir lernen, in Systemen zu denken, Systemarchitektur ist eine Praxis, weniger ein Jobtitel oder ein Jobrollen, obwohl es das oft ist, aber wenn Sie ein System bauen, ist es ein Gruppensystem von Praxisen, die, wenn sie gut gemacht werden, helfen, dass die Menschen und die Technologie bestimmte Qualitäten haben, die uns bessere Ergebnisse als ein System geben.
+Aber das bedeutet nicht, dass jeder die ganze Zeit über jeden Aspekt des Systems denkt.
+Es ist ein Werkzeug in unserem Werkzeugkasten.
+Und manchmal, wenn wir Auslösungen in der Produktion haben, zum Beispiel, dass, ich lache, aber ich lache nicht wirklich, für mich ist es ein guter Tag, wenn der Bug im Code ist, weil dann können wir es reparieren.
+Aber es ist viel öfter in den Verhältnissen zwischen den Teilen, in der eventuellen Konsistenz, in der Form der Information, die über das System fließt und wie es den Kontext ändert.
+Und so, haben diese anderen Tools in unserem Werkzeugkasten uns helfen, wenn wir sie brauchen, aber es ist nicht etwas, was jeder, jeder muss tun und sicher nicht immer.
+Ich meine, ich tue es immer, weil das mein Ding ist.
+Aber, was wir, was wir wirklich fokussiert sind, weil Systeme alles um Beziehungen gehen und wie sie einen Effekt produzieren, das gibt es auch in den Menschen.
+Also, zum Beispiel, kann ich nicht möglicherweise die Komplexität in den Systemen verstehen, auf die ich jetzt arbeite.
+Ich meine, es gab eine Zeit, in der ich ziemlich expertisch, ziemlich holistisch, ich hatte holistische Expertise, aber diese Tage sind lange vergangen in meiner Karriere.
+Und so, weiß ich nicht unbedingt die Perspektive, die, sagen wir, jemand, eine Produktperson vielleicht hat.
+Also, ich partner mit ihnen und synthesize, was ich verstehe, mit dem, was sie verstehen und was meine Erfahrung ist und ihre Erfahrung.
+Also, wir sind nicht, wir, wir tun es alleine, weil Meta-Kognition, das heißt, wir verstehen, wie unsere eigenen Gefühle funktionieren, weil wir ein Denksystem sind.
+Jedes Individuum ist ein Denksystem.
+Jedes Team ist ein Denksystem.
+Jede Organisation ist ein Denksystem.
+Und so, es gibt Dinge, die wir alleine tun.
+Aber, vor allem, ist es nicht nur, dass wir unseren kognitiven Druck erhöhen, sondern wir engagieren uns proaktiv mit anderen Menschen, sorry, in einem meiner Handys.
+Wir engagieren uns proaktiv mit anderen Menschen, damit wir die Information synthetisieren und ein Verständnis haben, wie Dinge funktionieren.
+Und so, es ist, wenn wir es gut machen, meine Erfahrung ist, es reduziert unseren kognitiven Druck, weil wir Kommunikationssysteme designen, die die Informationen besser für uns erhältlich machen und besser für andere Menschen erhältlich machen, die Entscheidungen machen, die uns beeinflussen.
+Also, über Zeit ist es weniger Geräusch, ist meine Erfahrung.
+Ein großer Teil unseres kognitiven Drucks kommt vom Fakt, dass wir in einem Umfeld arbeiten, in dem die Menschen Katzen sind und jeder hat seine eigene Agenda und wir wissen nicht wirklich, wie wir das synthetisieren, und das führt dazu, dass wir uns beeinflussen.
+Also, wenn wir es besser machen, sind wir meistens besser, wenn wir Signale finden.
+Also, es ist ein bisschen kontraintuitiv, dass man sagt, dass man über alles denkt, was unsere Leben einfacher macht, aber wenn wir eine wirklich gute Praxis als Individuum oder Team oder Organisation haben, müssen wir uns weniger Sorgen machen, weil es einfacher ist, Informationen zu finden, die wir brauchen, und Menschen, mit denen wir zusammenarbeiten, die uns helfen können.
+Du hast viel über Kommunikation gesprochen und eine lustige Sache, ein paar Monate her, ja, es muss ein paar Monate her sein, haben wir gefragt, was die Hauptkraft in der IT ist, also in der Technologie, in der Technologie, und die Antwort war Kommunikation.
+Das wurde viel gegeben, und du hast es auch gegeben, das ist eine Hauptkraft, aber ich frage mich, ob Systemdenkung und Kommunikation mit einander etwas ist, dass ich, ich denke, dass es etwas ist, das ich nur in die Ich weiß es nicht, aber ich, der englische Wort, Entschuldigung, ich muss es wollen, also kannst du mich nicht mehr mit Kommunikation verbinden, du kannst mich nicht mit Systemdenkung verbinden, aber ist es etwas, eine Organisation, weil jeder weiß, oder du zeigst es in deinem Buch, es ist gut, zu denken in Systemen, es ist gut, zu kommunizieren, es ist gut, das ganze in den Kopf zu haben, oder in mehrere Gefühle, ist es etwas, eine Organisation kann tun, um ihre Mitglieder in die richtige Richtung zu bringen, um es attraktiver zu machen, zu denken in Systemen?
+Ja, das ist eine wirklich exzellente Frage, und wir sind sehr gewohnt, ein Top-Down-Kontrollen als Prozess, und die Herausforderung für viele Menschen ist genau das, was du sagst, dass Systemdenkung, Kommunikation, diese Art von proaktiven Zusammenlernen, das beinhaltet Konsens, du kannst kein Pferd zum Wasser bringen, oder sie trinken.
+Wenn du fünf Leute in einem Raum hast, die versuchen, eine neue Herausforderung zu lösen, ein Problem, das sie noch nie gelöst haben, dann kannst du kein systemisches Rechnen machen.
+Das ist ein behördliches Herausforderung.
+Manchmal ist jemand in einer Leidenschaftsrolle, und sie machen eine Entscheidung, egal was jemand anderes sagt.
+Das ist ein politisches Problem.
+Systemdenkung hat keine Lösung, wie man es macht.
+Es beinhaltet Konsens, eine Willenschaft, es zu machen.
+Meine Erfahrung ist oft, dass, wenn Menschen keine Erfahrung von ihrem Vorteil haben, dann verstehe ich, warum sie es nicht tun.
+Ich fühle das, wenn ich in ein Restaurant gehe, und etwas vor mir steht, was ich noch nie gegessen habe.
+Ich denke nie, oh, ich mag das.
+Ich weiß nicht, wie es ist.
+Es gibt kleine Praktiken, die nicht für Menschen einen großen Schritt machen, die einen Geschmack der Erfahrung geben können, die den Vorteil zeigen.
+Wenn Menschen die Experimente probieren wollen, was mich sehr überzeugt und überrascht in einer guten Art und Weise, wie viele Menschen in Workshops kommen, und wir etwas machen, was sie noch nie gemacht haben, und vielleicht erscheint es etwas seltsam, und nicht nur versuchen sie es, sondern es ist wirklich gut, weil wir das schon tun.
+Wenn wir eine API-Interaktion zwischen zwei Software-Teilen entwickeln, dann haben wir die Möglichkeit, diese Experimente von Lernteams zu haben, Teams, die ein Problem haben, die sie nicht wissen, wie es zu lösen ist, und sie entwickeln die Möglichkeit, zusammenzuarbeiten, um das Problem zu lösen.
+Etwas wie Pair-Programming.
+Viele Menschen, und ich liebe es nicht immer, ich kann es nicht immer sagen, ja, Pairing, aber ich habe mit einigen meiner Kollegen einen enormen Vorteil davon erlebt.
+Ich denke, dass man eine Organisation oder ein Team nicht wirklich fördern kann, um ihre Kommunikation zu verbessern, wenn sie es nicht wollen.
+Wenn sie es aber wollen, und die meisten tun es, dann kann man es verstärken, dass Menschen und Teams den Vorteil haben, zusammen gut zu denken.
+Und man kann die Idee verurteilen, dass ein einziger 10X-Hero-Entwickler die Person ist, die den Tag retten wird.
+Ich denke, es geht viel um das, was wir in unserem Verhältnis und in anderen Menschenseinsätzen verstärken, aber letztendlich müssen wir das System nicht designen, das System wird designt, wenn wir es nicht designen.
+Das System wird ein Design haben, ob wir es explizit machen oder nicht.
+Es ist definitiv unser Vorteil, zu teilhaben, wie Dinge gedesignt werden, damit wir bessere Möglichkeiten haben, harte Dinge zusammen zu machen.
+Ich habe gerade erwähnt, dass es einige praktische Beispiele gibt, die die Technik und die Technik und die Technik und die Technik Wir können System-Denken auf einem niedrigen Niveau oder einem niedrigen Hürdel vorher ausprobieren.
+Hast du ein praktisches Beispiel, was die Leute dort morgen mit ihren Kollegen ausprobieren könnten?
+Ich habe zwei.
+Einer ist ein bisschen einfacher als der andere.
+Wir sind eine sehr No-Kultur.
+Wir hören immer, was falsch ist, und dann zeigen wir, was falsch ist.
+Und nur die Praxis des Improvisationskomikers, es heißt Yes-And, bevor ein Improvisationsteam auf der Bühne ist, praktizieren sie eine Art Simon-Says-Spiel.
+Jemand sagt, schnappt euch den Kopf, und alle sagen Ja.
+Das macht mich denken, Ja, Chef, schnappt euch den Kopf.
+Diese Idee, dass sie sich warmen, indem sie sich aneinander erkennen, bevor sie dann eine weitere Aktion machen.
+Wenn du jemals einen Improvisationssteam in Person gesehen hast, und jemand hat das nicht getan, dann wirst du die Szene völlig zerbrochen sehen, völlig zerbrochen.
+Das Gleiche passiert in unseren täglichen Leben, und wir bemerken es nicht einmal.
+Oft missverstehen wir, oder wir reagieren, oder jemand anderes löst ein Problem, und wir verstehen das Problem noch nicht.
+Und dann beginnen wir schnell mit dem, was falsch ist, und alles, was wir tun, ist umdrehen und die Fahrräder schütteln.
+Also nur das Gewöhnen, zuerst zu erkennen.
+Okay, Lisa, lass mich sicher sein, dass ich das verstehe.
+Das ist die Frage, die du mich fragst, und du sagst Ja.
+Und dann, was auch immer ich denken könnte, um die Situation zu verbessern.
+Es klingt wie eine sehr kleine Sache, und es klingt nicht wie eine Technik-Skala.
+Aber der Fakt, dass wir einen Blocker für die Zusammenarbeit der Lösungen bezeichnen, ist eine sehr gewöhnliche Sache, die wir nicht bemerken.
+Der letzte Schritt ist, eine Woche mit einem Ja-und-Kind-Praktikum zu verbringen, und zu sehen, ob das bessere Entscheidungen erzielt.
+Und neunmal aus zehn, in dieser Woche, mindestens einmal, wirst du sehen, dass es funktioniert.
+Und das bedeutet nicht, dass wir uns einig sind.
+Ich sage nicht, ja, Lisa, du hast alles richtig.
+Ich sage, ja, d.h. ich habe beachtet, was du eingeführt hast, und ich benutze das, und ich lege es hinzu.
+Und wenn wir zusammenarbeiten, dann lege ich es hinzu.
+Der nächste Schritt ist, dass wir uns auch sehr von der Meinung beteiligen.
+Also, wir teilen unsere Meinung.
+Das sieht aus wie eine Grafik, die Grafiken sind auf der Höhe.
+Das ist nicht genügend im Systemdesign, denn jeder hat viele Meinungen.
+Und wir versuchen tatsächlich, anderen Leuten zu helfen, zu verstehen, wie wir diese Begründung erreichen.
+Also, wenn ich z.B. sage, dass es etwas ist, was wir im System tun müssen, das es verbessern wird, z.B.
+Eventsourcing, dann lege ich nicht nur meine Meinung ein.
+Ich gebe auch die Gründe, die mich überzeugen.
+Warum in dieser Situation ist das eine beeindruckende Sache für uns?
+Und was sind die Optionen, die ich beachtet habe, die nicht so hilfreich sind?
+Und warum sind sie nicht so hilfreich?
+Und warum ist es wichtig, das jetzt zu tun?
+Weil es eine Million Entscheidungen gibt, die jeden Tag gemacht werden müssen.
+Also warum sollte das hier am Ende der Reihe sein?
+Also, die Kombination von Praxis, der Begründung, was andere Menschen eingeführt haben, bevor man dann mehr hinzufügt, und die Gründe, die dich überzeugen, dass eine Aktion, eine Idee oder eine Theorie wichtig sind in dieser Situation, verglichen mit anderen, ermöglicht die Struktur der Kommunikation zwischen Menschen, mehr darüber nachzudenken.
+Denn in jeder bestimmten Situation, was am besten ist in einer Situation, kann nicht das Beste sein in einer anderen Situation.
+Man kann nicht nur, was Netflix macht.
+Und wenn Menschen diese Entscheidungen zusammen erreichen, wie sie agieren, müssen sie verstehen, warum andere Menschen die Meinung haben, die sie haben.
+Und das ist der Grund, warum wir das System wirklich verstehen.
+Man muss die Logik verstehen, die jemanden zu einer bestimmten Begründung brachte.
+Und ich weiß, das kann eine Herausforderung sein, wenn wir uns fragen, warum sie nicht Kubernetes sagt?
+Warum sagt sie nicht KafkaStream?
+Warum sagt sie nicht eine bestimmte Lösung?
+Und die Grund ist, es hängt davon ab, ob eine bestimmte Lösung die richtige ist.
+Und die Menschen in den Umständen müssen entscheiden, was sie wollen.
+Also, die Einführung informeller Logik, der Prozess informeller Logik zu unserem aktuellen Prozess Logik-Logik, wie eine Formel-Logik, hilft uns, bessere Entscheidungen zu machen.
+Es hilft uns, bessere Entscheidungen zu machen.
+Es hilft uns, bessere Entscheidungen zu machen.
+Das zweite Beispiel, oder die zweite Praxis, hat mich wirklich an Architekturentscheidungen erinnert, weil man rechnen muss, warum diese Entscheidung für diese Architektur geeignet ist.
+Und ich denke, das kann alleine gemacht werden, aber ich denke, sie sind stärker und überzeugender für das ganze Team, wenn das ganze Team entscheidet, welche Lösung gewählt wird und warum diese Lösung gewählt wird in diesem Fall.
+Ja, ich musste an diese denken.
+Ja, und eine der, in der Arbeit mit ADRs, eine der Dinge, die oft verfehlt sind, ist, warum das für die Organisation und das System als ganzes wichtig ist.
+Also, wir lösen ein Technikproblem, aber wir verstehen nicht einmal wirklich, warum dieses Technikproblem für wen ist.
+Ich höre Argumente über die Leistung und ich sage, warum muss das System leistungsfähiger sein?
+Und oft wissen wir nicht, warum es leistungsfähig ist.
+Und die andere Sache mit ADRs ist, dass die Leute sie oft benutzen, um eine einzelne Entscheidung zu fassen, und sie verfehlen, die anderen Optionen, die sie beschlossen haben.
+Das ist auch unzufrieden, meiner Meinung nach, weil es viel mehr vertrauenswürdig ist, wenn Leute darüber nachdenken, drei verschiedene Dinge, aber die Entscheidung, die sie beschlossen haben, war die richtige, um ihr Problem zu lösen.
+Ich denke, das ist eine tolle Struktur, solange wir sie benutzen, um mehr darüber nachzudenken, als nur, wir haben ein bestimmtes Werkzeug beschlossen.
+Wir haben dieses Werkzeug beschlossen, weil wir dieses Problem hatten und wir haben dieses Werkzeug beschlossen.
+Etwas mehr Fleisch auf den Knochen, sozusagen, um den Kontext zu verstehen, den Sie beschlossen haben, denn garantiert, wenn Sie heute einen ADR schreiben, zwei Jahre später, die Chancen sind sehr hoch, es wird als die falsche Entscheidung bezeichnet werden, weil der Kontext verändert ist.
+Wie Sie gesagt haben, dass Sie nicht wissen, warum Sie etwas wählen, oder warum wir jetzt Performance wollen.
+Ich denke, eine sehr nutzliche Methode sind Qualitätsziele und Qualitätsszenarien.
+Wenn wir uns heute einigen, ist Performance sehr wichtig für uns, weil wir die ganze Sache durchführen können.
+Wir haben es schon im Kopf.
+Warum komme ich dazu?
+Ich habe darüber nachgedacht, dass ADRs und Qualitätsszenarien, Qualitätsziele sind sehr kleine Schritte in das Systemdenken, weil wir sie schreiben und über sie nachdenken, um unser System als ganzes zu sehen, aber in kleine Stücke um es besser in den Kopf zu nehmen oder besser mit anderen zu kommunizieren.
+Ja, und Gewinne.
+Wir haben gewisse festgelegte Gewinne und auch Juristik.
+Dinge, die wir entschieden haben, bedeuten wirklich in dieser Situation, die nicht so konkret ist, aber sie helfen uns zu erinnern.
+Alle diese Dinge zusammen bilden das, was wir Systemdenken nennen.
+Sie helfen uns, einen Einblick zu bekommen in den Kontext, in dem wir ein Problem lösen und den Wert einer Lösung, weil jeder, der in dieser Industrie mehr als drei Minuten war, so frustrierend ist, um in einer Konversation zu sein, eine endlose Konversation über etwas zu reden, das nicht so wichtig ist.
+Und so sind all diese Tools, die wir zusammenfügen, um uns zu helfen, zu verstehen, was wir können.
+Die Systeme sind alles über Leistungspunkte, d.h. an Orten, wo man einen kleinen Wandel machen kann, die einen großen Einfluss haben.
+Was denkst du?
+Wenn wir an Leistung denken, wie viele Linien von Code?
+Wenn ich 1.000 Linien von Code schreibe, die keinen positiven Einfluss auf das System als ganzes haben, wie wertvoll sind diese Linien von Code?
+Aber wenn ich zwei Linien von Code schreibe, die etwas unblockieren, was wirklich wichtig ist für Menschen, die das System benutzen, dann ist das mehr als eine Maßnahme.
+All die Dinge, die du sagst, sind genau richtig.
+Wenn ich Systeme über Beziehungen sage, meine ich absolut Beziehungen zwischen Artefakten.
+Es ist sehr schwierig, ein System auf einem zweidimensionalen Modell zu beschreiben.
+Ich meine, man kann das, aber für mich ist es die Linkfähigkeit.
+D.h. wenn ich ein Modell habe, aber ich kann einen Link klicken und dann mehr herausfinden und dann bin ich im Code.
+Wenn wir Artefakte machen, um ein System zu beschreiben, wie ADRs, Maturitätsmodelle oder Qualitätsziele oder die fast unendlichen Anzahl von Tools, die wir benutzen können, um zu einigen Schlussfolgerungen und Designentscheidungen zu kommen, dann unterscheiden sie sich.
+Das ist eine Beziehung, die zusammen ein System produziert, die besser ist, wenn wir keine dieser Dinge machen.
+Sorry, my brain is right now turning around and thinking about some things.
+Oh, we have a question on YouTube, sorry.
+So I will read it to you and maybe I will get less confused in this time.
+Jude Root says on YouTube, but reasoning about something isn't always what we normally do when we try to convince others.
+Do you always try to put pros and cons to each other to make the decision process transparent?
+Yes, when I talk about what I'm describing as systemic reasoning when we give our reasons and one of the ways of describing our reasons can absolutely be pros, cons and also Gin suggests in a talk that I saw her give just last week but also in the book and now I can't remember if it's collective modeling or collaborative running it's sad that I wrote the code for the book I think it's collaborative modeling because I remember that I wrote it in Sketchnot.
+Okay, I'm having a this is not my time zone and so my brain is like what the heck are you doing trying to think right now I love this book by the way which is even more sad I can't remember the name of my favorite book exactly but anyway they talk about also fixes so if you have a con is there something you could do to mitigate it that was the experience so I do think that one artifact is absolutely pros and cons but I think to the question which is very true is that people don't usually change their minds because they hear words and this is a failing I have certainly had in my career when someone doesn't understand something I think they just want me to say more so I say more sometimes so when people are experiencing doubt and if I would say systemic reasoning is always the first thing to do because you still need people to understand where you're coming from but then often people need an experience so this is where experiments can come in prototypes can come in demonstrations pairing on something that people might lean in the direction that you're saying but often they need to experience it as well in order to really understand it and so I think that's a great question and reasoning by itself and that's the thing in systems there's nothing by itself that solves the entire problem or the entire challenge and there's no one practice that will work the same in every situation so we basically are adding tools to the toolbox because we might pull out the hammer but we really needed a saw and so if the hammer and the saw don't help other things like experiences prototyping that help us really dive into something When you talked about that not one thing will be the solution, I always have to have your cat example in mind so one quote from your book is we are all always debugging a cat and I have to think about the cat example the whole time.
+Would you like to share it with the audience? yeah so one of the things for me that's been incredibly helpful is reading about the cat example so it's very unclear because my camera will share but I love those by the way your sketchnotes added so much to the book like because I spent a year with it without them so once they were there I rewrote two pieces of parts of the book because your sketchnote summary was so much more clear than the architecture of my words so I made the words match the sketchnote better I think a good example of relationships between the parts and then you get something better in the end so one of the things is reading about and studying systems that aren't tech and the reason it's so helpful is because we often think we're sort of a special unique little snowflake with problems no one can understand and a lot of our problems are just systems problems and the just doesn't mean they're easy because they are definitely not but it's not unique to our industry there's a lot of overlap between agriculture challenges and technology systems in terms of the types of patterns and what works well and what doesn't so the cat was my cat Marisha was ill and struggling to breathe so we took her to the vet and the vet said yeah I need you to go to the cat emergency hospital because this could be a heart her heart might be failing and so I did and they brought her in and three or four veterinarians came out different times over a couple of days this is the diagnosis well what convinced you like oh well I'm sure this is what it is one of them said we checked everything it's not her lungs she's fine you can take her home and got up the next morning and she was near death she was struggling she was not ok they had not solved it so brought her back we know this we fixed something in production production goes down again in the middle of the night because we fixed something but we didn't fix the thing so the person who was the chief medical officer at that facility and he basically did systemic reasoning towards me he doesn't know because they don't know and he never pretended to know but when he was making decisions about what to do next this is why I want to go in this direction there could be this option as well now I didn't understand the technology of everything he said because I'm not a very skilled veterinarian I understood enough to follow the logic oh I get it we're debugging the cat and it took a minute for him to understand what I was saying but the conversations that he and I were having were engineering conversations I was having with my colleagues we don't know what the problem is but we do have a process of reasoning about what to try so they never did figure out what was going on and she fully recovered and so now we call her the $5000 cat because that is in fact what it cost us to debug the cat but that experience really helped me to reinforce how essential this skill set is whether or not it leads to software or healthy a cat that's in crisis this process of debugging and understanding the system as a whole and finding places to investigate or make a change isn't unique to us

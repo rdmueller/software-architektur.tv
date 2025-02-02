@@ -1,0 +1,671 @@
+# Folge 240 - Domain-Driven Design - Ein vollständiges Beispiel 1/2 Hallo, ich bin Eberhard Wolff.
+Freitags mache ich, oder Lisa Moritz, einen Livestream zum Thema Software-Architektur, oft zusammen mit Gästen.
+Dieser Podcast ist das Audio des Streams.
+Weitere Folgen, Sketchnotes und vieles mehr findet ihr unter software-architektur.tv.
+Software-Architektur im Stream.
+So, dann herzlich willkommen zu einer weiteren Episode von Software-Architektur im Stream.
+## Einführung in Domain-Driven Design
+
+Heute geht es um Domain-Driven Design, ein vollständiges Beispiel, wobei das genau genommen die erste Episode zu dem Thema ist.
+Hintergrund ist, dass ich eine Präsentation dazu habe, wie man gerade sieht.
+Diese Präsentation habe ich tatsächlich auch schon auf verschiedenen Konferenzen gehalten.
+Aber als ich die Präsentation vorbereitet habe, habe ich so viele Folien produziert, dass das in einen typischen Konferenzslot nicht reinpasst.
+Ich habe das dann gekürzt, um es in einen Konferenzslot reinzubekommen.
+Ich habe mir gedacht, das könnte ich irgendwann auch mal vollständig präsentieren.
+Das ist genau das, was ich hier mache.
+Ich habe das aufgeteilt.
+Meine Erwartungshaltung ist, dass ich heute nicht alles schaffe.
+Aber schauen wir mal.
+## Strategische vs. Taktische Geschichten
+
+Das heißt, heute wird es vor allem um strategische Geschichten gehen.
+Und beim nächsten Mal, ich denke, das sollte der Freitag sein, wird es dann um das Thema gehen, wie man tatsächlich taktische Geschichten eher umsetzt.
+Fragen jederzeit gerne willkommen.
+Wir haben tatsächlich eine ganze Menge an Zeit, uns mit Fragen zu beschäftigen.
+Von daher würde ich sagen, fangen wir einfach mal an.
+Warum dieser Talk?
+## Ziele des Talks
+
+Also Domain-Domain-Design hat eben eine ganze Menge an wertvollen Werkzeugen.
+Und die Frage ist jetzt, welche davon sind jetzt tatsächlich wirklich sinnvoll und notwendig?
+Wie kann ich die alle kombinieren?
+Gleich am Anfang ein Hinweis.
+Das Ganze sieht möglicherweise ein bisschen aus wie ein Wasserfall.
+Das heißt, wir reden darüber, wie wir vorgehen.
+Und dabei müssen wir eine Reihenfolge von den verschiedenen Ansätzen haben.
+Aber tatsächlich geht es hier um verschiedene Ebenen von Abstraktionen.
+Das heißt, wir arbeiten uns von sehr absakten Dingen weiter voran bis hin zu dem halt konkreteren Ebenen.
+Und das bedeutet, wir sollten eben gerade nicht wasserfallmäßig vorgehen.
+Dazu gibt es auch diverse Personen, die sagen, dass das keine gute Idee ist, sondern wir sollten halt in Iterationen vorgehen.
+Und wir sollten halt irgendwie diese Ebene der Abstraktionsebene ändern.
+Das heißt also, diese Techniken, die wir hier diskutieren, führen zu Feedback auf unterschiedlichen Ebenen.
+Und abhängig davon, auf welcher Ebene ich Feedback und Dinge erfahren will, wende ich irgendeine von diesen Techniken an.
+Das bedeutet nicht, dass die in dieser Reihenfolge zu nutzen sind, sondern es geht darum, dass man die an den richtigen Stellen einsetzt, um die richtigen Ideen, das richtige Feedback zu bekommen.
+Gut, der Frage zweierlei ItDepends hat gesagt, hallo, Ibar, du hattest mal OneVenom eingeleitet, genau diese Folge zum Thema Ports and Adapters und DDD.
+Dazu würde ich gerne meine Frage nach dem Zusammenhang darzustellen.
+Ja, mein Plan ist es, dieses Thema, also Ports and Adapters, beziehungsweise hexagonale Architektur, zu diskutieren, und zwar bei der nächsten Episode.
+Tatsächlich ist die Frage nach dem Zusammenhang eine gute.
+Also, ob irgendwie Domain-Domain-Design mit diesem Thema zusammenhängt.
+Gut, also da nicht, schreitet auch das nächste Mal wieder ein, da würde ich das Thema dann darüber diskutieren.
+Gut, das dazu.
+## Event-Storming
+
+Fangen wir an mit dem Thema Event-Storming.
+Und jetzt ist halt die Frage, warum wollen wir eigentlich Event-Storming machen?
+### Warum Event-Storming?
+
+Wir haben halt irgendwie grundsätzlich folgendes Problem.
+Wir haben halt auf der einen Seite Menschen, die ja Domain-Expertinnen sind, und auf der anderen Seite haben wir Software-EntwicklerInnen.
+Und Domain-Expertinnen verstehen per Definition die Domäne, und Software-EntwicklerInnen verstehen das Wissen, also wissen halt, wie man sozusagen aus Wissen Software generiert.
+Das also so strukturiert, dass am Ende halt irgendwie Software dabei rauskommt.
+### Kollaboration zwischen Rollen
+
+Und das bedeutet, dass wir jetzt zwei Rollen haben, die irgendwie zusammenarbeiten müssen.
+Also nicht Domain-Domain-Design bedeutet, die Domäne treibt das Design.
+Das heißt, Domain-Expertinnen wissen, was eigentlich das Design treibt, aber Menschen wie ich, Software-EntwicklerInnen, ArchitektInnen und solche Leute, die müssen halt irgendwie verstehen, wie man jetzt dieses Wissen so strukturiert, oder müssen halt dieses Wissen haben, zur Verfügung haben, um es dann eben so zu strukturieren, dass letztendlich Software daraus wird.
+Und das führt jetzt dazu, dass wir hier irgendwie kollaborieren müssen, denn anders geht es nicht.
+Also Domain-Expertinnen kennen keine formalen Methoden.
+Software-EntwicklerInnen verstehen die Domäne nicht.
+Das heißt also, wir können unmöglich jetzt irgendwie sagen, okay, irgendwie wird die eine Rolle die Skills der anderen Rolle lernen und dann das sozusagen im Alleingang machen.
+Also es muss eine Kollaboration geben, um eben gemeinsam dieses Modell zu erstellen.
+Und dafür bietet sich halt Event-Storming an.
+Event-Storming ist ein relativer Low-Tech-Ansatz.
+Das heißt, ich verwende ein Event.
+Das ist etwas, was in der Vergangenheit passiert ist.
+Deswegen verwende ich eben zumindest ein Hauptwort, also ein Substantiv und einen Verb.
+Und zwar in der Vergangenheit, ich schreibe das halt irgendwie auf einen orangenen Sticky.
+Das heißt, ich habe hier zum Beispiel sowas wie Bestellung akzeptiert.
+Das steht jetzt auf einem orangenen Sticky und damit habe ich jetzt eben mein Event.
+Die Farben, die Farbcodierung ist etwas, worauf die Menschen bei Event-Storming Wert legen.
+Ich glaube, das bleibt bei der Standardisierung auch gar nicht so schlecht.
+Und das ist so ein bisschen die Idee.
+Vielleicht an der Stelle ein Hinweis zu dem Talk an sich.
+Also mein Ziel ist es jetzt nicht, eine komplizierte Domäne darzustellen, sondern meine Intention ist es halt, zu sagen, okay, so funktionieren diese Techniken, so greifen sie halt ineinander.
+Was irgendwie bedeutet, dass ich jetzt eine sehr triviale Modellierung mir nur ausgewählt habe.
+Also nichts, was irgendwie super, super kompliziert ist.
+Und das bedeutet eben, dass wir da eben zwar ein vollständiges Beispiel haben mit allen Techniken, aber sicherlich kann es was halt sozusagen der typischen Domänenkomplexität gerecht wird.
+Strudelhund69 hat auf Twitch gesagt, vielen lieben Dank für die ganzen Videos, höre ich immer wieder rein, freut mich sehr.
+Und tatsächlich ist das Feedback, was auch sonst von euch kommt, das positive Feedback für uns total wichtig und ein wichtiger Motivator.
+Von daher genau sowas ist halt super.
+Vielen Dank dafür.
+Gut, also das ist Event-Storming.
+Ich schreibe also solche Events auf.
+## Chaotic Exploration
+
+Und die erste Phase, in der ich das mache, ist Chaotic Exploration.
+Das heißt, ich sage im Prinzip, baut irgendwie so viele Events, wie es irgendwie geht, und lasse den Leuten das halt, dann gibt ihnen halt sozusagen freie Bahn, dafür zu sorgen, dass sie das halt irgendwie umsetzen.
+Und dann kommt als nächstes, also logischerweise laufen hier die Events von links nach rechts.
+### Anordnung der Events
+
+Das kann man sich, glaube ich, irgendwie vorstellen.
+Und wenn ich aber Chaotic Exploration mache, bedeutet das, dass das jetzt nicht überall wirklich umgesetzt ist.
+Also links sind die Events, die ja die Vorbedingungen sind für die rechten Events.
+Und das heißt, was ich jetzt machen kann, ist die Timeline entforcen.
+Ich sorge also dafür, dass die Events, die halt vorher irgendwie vielleicht so angeordnet sind, danach irgendwie so angeordnet sind, dass sie eben dann tatsächlich auch linear vernünftig angeordnet sind.
+Und das mache ich, indem ich eben nochmal durch diese Zeit, durch die Timeline durchgehe.
+Also festlege, dass tatsächlich die Events links von den Events rechts sind.
+Das kann ich auch so umgekehrt machen.
+Ich kann nämlich sagen, okay, hier ist irgendein Event.
+Sind die Vorbedingungen eigentlich dafür alle da?
+Ja, dann ist sehr gut.
+Sonst strukturiere ich die Events so, dass das eben tatsächlich auch dann in dieser Reihenfolge da ist.
+### Identifikation von Swimlanes
+
+Dann kann ich als nächstes Swimlanes identifizieren.
+Das sind so parallele Prozesse, die halt irgendwie parallel passieren.
+Und ich kann jetzt hier in dem Beispiel zum Beispiel sagen, okay, hier ist eine Swimlane.
+Und das ist irgendwie die Swimlane, wo ich eine Richtung schreibe.
+Also das ist ja ein E-Commerce System.
+Hier ist die Swimlane, wo ich halt irgendwie jetzt etwas ausliefere.
+Und das sind ja mehr oder minder parallele Aktivitäten.
+Da gibt es Berührungspunkte.
+Ich muss halt dafür sorgen, dass halt eine Rechnung geschrieben wird, wenn tatsächlich die Sachen ausgeliefert worden sind und umgekehrt.
+Aber im Wesentlichen sind dann halt die konkreten Schritte tatsächlich Dinge, die im Wesentlichen parallel laufen.
+## Pivotal Events
+
+Und dann gibt es so Pivotal Events.
+### Definition von Pivotal Events
+
+Das sind so Events, nach denen die Welt irgendwie anders ist.
+Da gibt es eine Menge an Heuristiken.
+Zum Beispiel eine Bestellung akzeptiert ist zu einer Vorbestellung.
+Akzeptiert ist es halt relativ easy zu sagen, okay, ich packe noch irgendwas dazu.
+Dann habe ich halt irgendwie den Einkaufswagen.
+Danach ist das schwierig.
+Also eigentlich wird es dann eben tatsächlich schon verschickt.
+Und ich kann es vielleicht nur noch gesamt stornieren.
+### Zusammenhang von Events
+
+Das heißt also, die Welt ist anders.
+Und es gibt, weil es eben schwieriger ist, Dinge jetzt nicht mehr zu bestellen.
+Und es ist außerdem so, dass es neue Objekte gibt.
+Also es gibt zum Beispiel die Rechnung, es gibt die Lieferung und so weiter und so weiter.
+Das heißt also, dass ich dort dann tatsächlich eine andere Welt habe.
+Hier ist zum Beispiel noch sowas.
+Also das Paket ist jetzt aus meinem Lager raus.
+Das bedeutet, dass ich jetzt irgendwie nicht mehr sagen kann, okay, ich schicke es nicht mehr raus.
+Sondern es ist jetzt irgendwie in der Verantwortung von DHL.
+Was irgendwie zum Beispiel bedeutet, dass wenn es halt verloren geht, das halt deren Problem ist.
+Und das ist vielleicht eben auch etwas, wo halt die Welt dann etwas anders aussieht.
+Und das ist jetzt ein Pivotal Event.
+Würde Order Accepted eher eindeutig für ein Pivotal Event halten, weil es halt wirklich sehr fundamental ist.
+Pivotal ist eben irgendwie eine fundamentale Änderung.
+Dass das Paket jetzt das Lager verlassen hat, ist vielleicht etwas weniger Pivotal sozusagen.
+Also das ist vielleicht etwas weniger eindeutig.
+So Vorteile davon.
+## Vorteile von Event-Storming
+
+Das ist relativ low tech.
+Das heißt, es ist einfach, das für Domänen-Expertinnen zu verstehen.
+Also ich schreibe ein Event auf eine Karte, mache irgendwas, was sich interessiert.
+Das sollte man typischerweise hinbekommen.
+Menschen können parallel an diesem Ding arbeiten, weil ich habe eine Wand.
+Da sind halt diese ganzen Dinge halt irgendwie dran.
+Und das ist sehr easy, da halt mit vielen, vielen Menschen parallel zu arbeiten.
+Was halt sonst vielleicht irgendwie nicht so einfach ist.
+Dann, und das ist, glaube ich, eine von den nicht offensichtlichen Dingen, die aber tatsächlich sehr wichtig sind.
+Die sozialen Strukturen werden offensichtlich.
+Was ich damit meine ist, ich sehe, wer arbeitet mit wem zusammen, wer versteht Dinge, wer sind Expertinnen für bestimmte Dinge.
+Und das ist, glaube ich, auch ein wichtiger Hinweis.
+Das heißt, ich habe dort so eine Art Labor, in dem jetzt irgendwie alle Menschen, die an diesem ganzen Ding arbeiten sollen, TechnikerInnen, Domänen-Expertinnen und so weiter, mal zeigen können, wie sie das eben tatsächlich tun.
+Und dadurch werden eben eine Menge Sachen offensichtlich.
+## Herausforderungen von Event-Storming
+
+Herausforderungen, die richtigen Menschen halt irgendwie in den Raum zu bekommen.
+Domänen-Experte ist so ein bisschen ein schwieriger Begriff.
+Da gibt es halt zum einen die Menschen, die halt jeden Tag das System benutzen.
+Die wissen halt, wie das System tatsächlich funktioniert.
+Dann gibt es irgendwie Menschen, die sagen, okay, warum investieren wir jetzt?
+Warum bauen wir da irgendetwas?
+Das sind Menschen, die so ein bisschen eine Vision haben und das so auf dieser Ebene diskutieren können.
+Und ich brauche beide und ich brauche idealerweise eigentlich so Leute, die tatsächlich vielleicht noch fachlich mit dem System arbeiten, aber halt eine weitergehende Vision haben.
+Mir nützt Leute, die nur sagen, so funktioniert jetzt das System, helfen mir nicht dabei, das System weiterzuentwickeln.
+Deswegen brauche ich da eine Kombination.
+Sprich, Leute, die es wirklich benutzen, haben vielleicht nicht die Vision und den Kontext.
+Manager haben vielleicht nicht dieses Verständnis darüber, wie es in der täglichen Arbeit funktioniert.
+Und jede Person, die daran beteiligt ist, versteht eben nur einen Teil dieser Logik.
+### Bedeutung der Rolle der ExpertInnen
+
+Und die muss ich jetzt irgendwie alle zusammen bekommen.
+Ergebnis davon im gemeinsamen Verständnis der Domäne und damit eben ein Modell der Domäne, das ich aber erstmal ändern muss und anpassen muss, bevor ich es implementieren kann.
+Das heißt also, ich habe eigentlich dadurch nur die Möglichkeit, erstmal dieses gemeinsame Verständnis auf die Reihe zu bekommen.
+Und hier steht noch, wie gesagt, die Rollen und die Kollaboration wird irgendwie offensichtlich.
+Dann lass mich kurz schauen.
+Achso, genau.
+Ich bringe das, glaube ich, kurz noch mal zu Ende.
+Da sind jetzt ein paar Fragen aufgelaufen.
+Ich glaube, das bringe ich dann tatsächlich kurz noch mal zu Ende.
+Also ## Alternativen zu Event-Storming
+
+Alternativen dazu, Domain Storytelling, das ist sehr prozessorientiert.
+Aber auch etwas, wo ich eben kollaborativ Dinge sozusagen hinschreibe und hinmale und da gemeinsam daran arbeite.
+Und sowas wie Context Mapping, wo ich halt Kontexte einfach aufmale und sage, okay, das sind eben die Kontexte, die ich hier sehe und das sind die Funktionalitäten der Kontexte.
+Wem das interessiert, es gibt eine Episode zum Thema Domain Storytelling mit dem Stefan und dem Henning, die darüber auch das Buch geschrieben haben und das auch so ein bisschen erfunden haben.
+Da kann man sich also Domain Storytelling angucken.
+Es gibt diese Episode, wir bauen eine Software-Architektur.
+Da zeige ich, wie ich so Context Mapping machen kann, also wie ich einfach Dinge zusammenpacke, die eine gemeinsame Funktionalität haben.
+Und es gibt die Episode zum Thema eine Architektur entwerfen, am Beispiel der ISA-Copy-Beispielaufgabe.
+Und da diskutiere ich tatsächlich dann eben, wie man Context Mapping macht anhand der Architektur-Beispielaufgabe.
+So, jetzt lasse ich mich kurz auf die Dinge aus dem Chat eingehen und ich blende dafür, glaube ich, mal kurz die Folien aus.
+Frage zweierlei.
+E.T.
+Penz hat geschrieben, das Modell eben zwischen den Köpfen, ist das dein Domain-Modell?
+Und vielleicht kannst du kurz sagen, was da natürlich zwischen Domain und Domain-Modell ist, meiner Meinung nach wichtig.
+Also ein Modell ist für mich ein mehr oder minder formalisiertes Erfassen von dem, was da draußen eigentlich passiert.
+Und wir haben hier jetzt so ein Modell.
+Also wir haben halt diese Events und die zeigen ja, was da draußen passiert.
+CRUD ist ein weiteres Modell auf einer konkreteren Abstraktionsebene.
+Da ist es eben so, dass ich tatsächlich eben dann diese Business-Prozesse so umgesetzt habe, dass ich sie eben in einem IT-System laufen lassen kann.
+Hier habe ich ja nur ein gemeinsames Verständnis durch irgendwelche Events.
+Das sind irgendwie Modelle, also Dinge, die mir was über die Realität sagen, sodass ich darüber halt reflektieren kann.
+Und diese gemeinsame Entwicklung der Modelle ist eigentlich die Kernaufgabe von Software-Entwicklung.
+Das Modell, um das es da insbesondere geht, ist eben natürlich der Code.
+Aber die anderen Modelle, wie zum Beispiel die bei Events-Domain oder bei Storytelling oder so, oder eben bei Context-Mapping, sind halt irgendwie auch spannend, weil sie Voraussetzungen dafür sind, dass wir solche Modelle halt im F3 bekommen.
+Jan hat geschrieben, das Arbeiten mit CRUD wünsche ich dir auch keine große Tool-Unterstützung, mit so einem Zwinker-Smiley.
+Genau, das ist eins der Feature.
+Und vielleicht an der Stelle, Miro ist halt auch irgendwie dein Freund.
+Das heißt also, wenn man das hat, oder Concept-Board oder was da irgendwie rumfliegt, Mural.
+Das heißt also, man kann diese Sachen eben auch tatsächlich mit Tool-Unterstützung remote irgendwie machen.
+Und das ist auch eine Sache, die, glaube ich, sinnvoll ist.
+Also ich mag mittlerweile die digitalen Tools eigentlich lieber als die Post-Its.
+Denn mit den digitalen Tools habe ich eben automatisch gleich das Zeug irgendwo archivierbar.
+Und ich kann das relativ leicht kopieren und wieder aufgreifen und so weiter und so weiter.
+Und ich kann es eben remote gemeinsam ändern.
+Also mittlerweile bin ich halt der Meinung, das ist vielleicht besser.
+War das Ergebnis nicht sogar etwas zum Wegwerfen?
+Es soll Know-How geteilt werden und kein Artefakt erstellt werden?
+Ja, das ist ein guter Punkt.
+So kann ich das aufgreifen.
+Ich wäre da nicht so orthodox und würde halt sagen, ich schmeiße das Artefakt weg.
+Aber die Idee zu sagen, es geht vielleicht gar nicht um das Artefakt, sondern es geht darum, dass wir diesen Prozess haben und Wissen austauschen.
+Und eben auch insbesondere darum zu beobachten, wie dieses Artefakt entsteht.
+Das stimmt.
+Das ist ein guter Punkt an der Stelle.
+Der Nafetz Nesniv hat geschrieben, LOL-Manager haben keine Ahnung.
+ZwinkerSmiley finde ich schwierig.
+Die müssten mindestens dazu in der Lage sein zu sagen, warum wir jetzt gerade diese große Menge Geld ausgeben, um irgendwie ein neues Stück Software zu implementieren.
+Und mindestens auf der Ebene sollten die was sagen können.
+Ich finde es bei Event-Storming wichtig, dass eben tatsächlich alle beteiligten Gruppenprinzipielle dann teilnehmen können.
+Und ich würde da halt niemanden ausschließen.
+Also wie gesagt, so eine Vision, die irgendwie sagt, warum wollen wir das eigentlich besser machen?
+Aus der Management-Perspektive kann das sehr wertvoll sein.
+Philipp Sporrer sagt, sollte man immer den gesamten Business-Prozess im Event-Storming abhandeln oder kann man auch Teilbereiche sinnvoller arbeiten?
+Also wie soll ich sagen, das ist ein guter Punkt, weil wir über eine Menge an Techniken diskutieren.
+Und ich würde sagen, eine Technik soll ein Problem lösen.
+Und was auch immer dein Problem ist, wenn du denkst, dass die Technik dafür helfen kann, dann nutze sie halt.
+Sprich Event-Storming für einen Teilprozess ist aus meiner Sicht völlig fein.
+Wenn das System groß genug ist, werde ich mir wahrscheinlich in mehreren Sessions unterschiedliche Menschen dazuholen, um unterschiedliche Teilbereiche zu untersuchen.
+Und das ist eben ein Ergebnis der Komplexität.
+Mark M. schreibt, es gibt Ruth Malan, die sich sehr mit System-Design und Contextual Design beschäftigt.
+Domain Driven Design, ein vorstehendes Beispiel, ist bestimmt auch mit Systems-Thinkings verknüpft, ja oder nein?
+Das ist ein bisschen das, was ich hier ja sage.
+Also mit Systems-Thinking versuche ich eben auch, zum Beispiel die soziale Komponentenmehrheit anzuschauen.
+Und das kriege ich halt mit Event-Storming hin, weil ich hier sehe, wie die Menschen zusammenarbeiten.
+Achso, genau, Frage 2.
+Hast du aus der Workshops gute Erfahrungen mit teilweise asynchronen Formaten gemacht?
+Ich bin nicht sicher, was mit asynchronen Formaten gemeint ist, also ich würde versuchen, diese Dinge, über die wir jetzt reden, wie z.B.
+Event-Storming, synchron zu machen, weil ich sonst Schwierigkeiten hätte, mir vorzustellen, dass man sozusagen die notwendige Bandbreite dafür bekommt.
+Also ich kann mir nicht vorstellen, dass es sinnvoll ist, zu sagen, hey, ich arbeite hier mal was aus, kommt bitte danach dazu und gebt Kommentare.
+Ich glaube, wenn man alle virtuell zumindest in einem gemeinsamen Raum hat und daran arbeiten lässt, ist es wahrscheinlich deutlich produktiver.
+Ich habe zum einen sowas asynchron noch nie gemacht, zum anderen glaube ich, würde ich davon auch tatsächlich abraten.
+Was ist der Zusammenhang zwischen System Thinking und System Design und diesem Video, inklusive dem von Lisa?
+Lisa hatte ja zwei gemacht, da geht es wahrscheinlich um das mit Diana.
+Ich glaube, ein wesentlicher Punkt, über den wir noch stärker nachdenken müssen, ist eben, dass wir Systeme integriert zwischen sozialen und menschlichen Beziehungen sehen müssen und das System ist sozusagen unausweichlich das, was dieses soziale Setting erzeugt hat.
+Das ist ein Teil der Erklärung dafür, dass es so aussieht, wie es aussieht.
+Mir gefällt auch an den Fragen, genau diese Diskussion mit, ist das eigentlich wirklich das Artefakt, was so relevant ist?
+Wir haben hier einen Lernprozess, wir sehen, wie Menschen interagieren, das ist vielleicht sogar wichtiger als das Artefakt selber.
+Wir hatten mit der Xing Chao vor einiger Zeit eine Episode, die hat genau das auch gesagt und ich finde immer noch, dass das ein sehr spannender und wichtiger Punkt an der Stelle ist.
+Danke für die Antworten, kommt hier sehr gerne und dann können wir, glaube ich, weitermachen.
+Ich erzähle mal was zu, genau, Bauen im Kontext ist das Nächste, also warum eigentlich Bauen im Kontext?
+Naja, das ist eine grobgranulare Aufteilung der Domäne und zwar sowas, was ich einem Team zuweisen kann und ein Team kann auch an mehreren Bauen im Kontext arbeiten, aber ein Bauen im Kontext sollte idealerweise einem Team gehören, wobei man darüber auch diskutieren kann.
+Bauen im Kontext, wieder ein sehr schöner Name, also das sind Grenzen, in denen eben ein Modell existiert, in diesem Fall ist es Code, eher so konzeptionell die Idee und auf der anderen Seite die Ubiquitous Language, also eine gemeinsame Sprache und hier zumindest im Stream ist immer mein Standardbeispiel die berühmte NALI, die Nachlieferung und das ist eben etwas, was in einem Bauen im Kontext bekannt ist, eben bei einem bestimmten Kunden und die Idee ist jetzt, dass das ein Teil dieser Ubiquitous Language ist, die ist allgegenwärtig und zwar ist die allgegenwärtig in dem Sinn, dass ich das im Code habe, dort hätte ich jetzt also eine Klasse Nachlieferung oder NALI, wenn wir in der Datenbank hätte eine Tabelle dazu und das wäre jetzt auch etwas, was Softwareentwickler und Domänexperten beim täglichen Gespräch benötigen und dadurch komme ich eben in diese Kommunikation, ich habe eine vereinfachte Kommunikation, ich kann mich also jetzt hinstellen und kann sagen, okay, die Nachlieferung und dann kann ich das, also nicht, dass wir halt hier, das heißt Domänexperten sagen, wir liefern Dinge nach, wenn folgende Bedingungen erfüllt sind und ich kann jetzt, wenn wir als Techniker mich hinstellen, kann sagen, okay, alles klar, das heißt, es gibt eine Klasse Nachlieferung, da schreibe ich es halt rein.
+Dadurch ist die Übersetzung einfacher, das wäre schwieriger, wenn da halt irgendwie eine Delivery wäre oder eine Post-Delivery oder was auch immer man sich da überlegen könnte, sondern ich will eben genau diese Nachlieferung da irgendwie drin haben.
+Das führt dazu, wenn ich mir jetzt zum Beispiel den Rechnungsführungsprozess und den Lieferprozess angucke, dass ich dort bestimmte Informationen haben möchte, also zum Beispiel im Rechnungsführungsprozess den Kunden, der hat die Rechnung bezahlt, beim Lieferprozess der Kunde, zu dem die Produkte hingeschickt werden und das sind potenziell zwei unterschiedliche, also wenn ich jetzt auf Kosten von Swaglab einen Laptop bestelle, dann ist Swaglab die Firma, die hat die Rechnung bezahlt und ich bin derjenige, wo es hingeliefert werden soll, Swaglab in Hamburg, ich in Kaiserslautern und ich bin irgendwie ungehalten, wenn das halt irgendwie verwechselt wird.
+Klassisches Beispiel auch der Hotel-Check-in.
+Beim Hotel-Check-in ist es mittlerweile so, dass ich irgendwie sage, ich bin der Ebert Wolf und ich wohne in der Swaglab GmbH Simon von Utrechtstraße in Hamburg, weil ich möchte halt am Ende gerne die Rechnung haben und das ist irgendwie schwierig, deswegen gebe ich jetzt eben nur die Rechnungsadresse an und weil die Domain-Modellierung nicht sauber ist, fragen die halt eigentlich nach meiner Wohnadresse, weil die brauchen sie halt für Meldescheine und müssen sie halt irgendwelchen Leuten melden, damit sie wissen, wer da genau ist und da ist eben das Problem, dass halt diese Modellierung nicht sauber ist in diesem typischen Hotelsystem und ich versuche dagegen sozusagen anzuhacken.
+Sollten ArchitektInnen Einfluss darauf nehmen, dass die Sprache vielleicht etwas generischer wird?
+Also genau genommen ist es halt so, dass wir zwangsläufig diese Sprache jetzt ein bisschen konkretisieren, weil wir müssen ja irgendwie irgendeine Klasse bauen.
+Also ich kann nochmal sozusagen eine Folie zurückgehen und da stellen wir halt fest, ich habe hier jetzt im Code irgendwie diese Nali oder Nachlieferung und da sieht man schon nicht, es gibt halt die Nali und die Nachlieferung.
+Das eine ist ja irgendwie ein Akronym für das andere oder so eine Abkürzung und jetzt entscheide ich halt, dass ich hier Nachlieferung hinschreibe oder eben Nali.
+Damit habe ich jetzt ein Begriff herausgehoben, weil das ist der, der halt im Code ist.
+Abgesehen davon würde ich das nicht versuchen zu generisch zu machen.
+Unser Ziel ist es gerade im Gegenteil exakt für das Business-Problem, was halt dort existiert, eine Lösung zu bauen und dafür würde ich halt versuchen sehr spezifisch zu sein.
+Generalisieren ist halt schwierig, weil es halt auch deswegen schwierig war, ich halt nicht vorhersehen kann, worüber ich halt generalisiere.
+Also ich habe jetzt nur ein Beispiel, eben eine Nali, eine Nachlieferung.
+Was ist das Generelle?
+Keine Ahnung.
+So und dann ist mir die Frage, ob ich das halt generalisieren möchte und in vielen Fällen ist eben die Generalisierung, insbesondere eine frühzeitige Generalisierung, schwierig, weil es dazu führt, dass wir halt dann Konzepte haben, die eben doch nicht generell sind und dann wird das System irgendwann unübersichtlich und schlecht wartbar, weil man eben die falschen Generalisierungen gewählt hat.
+So das habe ich erzählt.
+So jetzt ist halt die Frage, wie komme ich jetzt zu meinen Kontexten und das ist eine von den Sachen, wo ich jetzt mit Event-Storming mir schon ein paar Sachen hingelegt habe.
+Das heißt, ich kann jetzt hier Kandidaten identifizieren und Kandidaten sind genau diese Flächen hier zwischen den Pivotal Events und den Swimlanes.
+Das heißt also, ich kann jetzt sagen, ich habe einen Bestellprozess, der endet halt damit, dass ich die Bestellung akzeptiere.
+Dann gibt es hier eine Swimlane, die halt irgendwas macht zum Thema Invoicing.
+Dann gibt es hier eine Swimlane für Delivery und ich entscheide jetzt, dass wir genau diese drei Bauenden Kontexte haben.
+Was ich da jetzt gemacht habe, ist, dass ich gesagt habe, hier war ja vorher so ein Pivotal Event in der Mitte von dem Lieferprozess.
+Nämlich da, wo das Paket halt sozusagen rausgegangen ist aus dem Lager und da habe ich jetzt entschieden, dass dieser Teil nicht ausreichend ist, um einen neuen Bauenden Kontext anzufangen.
+Also die Sprache ist im Wesentlichen identisch.
+So die These, ich erschlage das mit im Wesentlichen demselben Code-Modell.
+Also ist es ein Modell.
+Das ist eine Diskussion, über die man jetzt, also nicht die Diskussion könnte man führen.
+Man könnte sagen, ja da will ich etwas Neues haben.
+Ja genau, das ist halt eine Architektur- Herausforderung.
+Was sind die Vorteile?
+Also noch ein Hinweis erstmal, das sind nur Kandidaten.
+Ich muss mir jetzt immer noch Gedanken über Design machen.
+Ich habe hier zum Beispiel gesagt, ich habe halt entschieden, dass ein Pivotal Event zumindest jetzt eben nicht diese Systeme aufteilt.
+Und dann sind solche Fragen wie, wie ist denn das, wenn ich jetzt Geld zurückbekomme, ist es dann so, dass ich das erledige mit demselben Modell wie die Rechnungslegung.
+Das ist vielleicht diese Geschichte, die der Nuffets vorhin gefragt hat, von wem sollte das eine Generalisierung sein?
+Keine Ahnung.
+Da könnte man jetzt sagen, dass ich das mit demselben Modell mache.
+Also wenn ich jemandem Geld erstatte, gebe ich dem Dokument in die Hand und Geld.
+Wenn ich eine Rechnung schreibe, habe ich eben eine Rechnung und ich bekomme Geld.
+Das könnte sein, dass ich dafür halt irgendwie eben dasselbe Modell baue.
+Das heißt, ich habe dann einen großen Code-Block, der kann Rechnungen schreiben und der kann auch Rückerstattungen durchführen.
+Darüber müsste man dann halt sozusagen diskutieren.
+Und dann ist eben genau die andere Frage, wenn ich etwas zurückgebe, wird das eben auch von dem Lieferprozess erledigt?
+Das ist eine ähnliche Diskussion.
+Auch da ist eben wieder die Frage, ob das wirklich dasselbe ist.
+Also da ist es halt so, dass bei einem Lieferprozess eine Ware rausgeschickt wird.
+Bei einer Rückgabe kommt eine Ware wieder zu mir rein.
+Ist das dasselbe Modell oder nicht?
+Keine Ahnung.
+Wäre jetzt eine Geschichte, die man halt dann fachlich erledigen muss.
+Vorteile davon.
+Wir haben damit die Domainlogik strukturiert auf einer grobgranularen Ebene.
+Und wenn wir das so machen, wenn wir jetzt also sagen, dass Sachen, die zusammengehören, auch tatsächlich zusammen in einem bauenden Kontext sind, also Fachlichkeiten in einem bauenden Kontext implementiert sind, dann impliziert das, dass wir für jede Fachlichkeit auch nur einen bauenden Kontext benötigen.
+Wir haben also Dinge wie, erzeuge mal die Rechnung, berechne die Rechnungsbeträge oder bei Lieferung nicht, schicke diesen Klicker raus oder was auch immer.
+Und diese Dinge sind halt jeweils in einem Modell implementiert.
+Was bedeutet, wenn ich irgendetwas will, lande ich wahrscheinlich im Wesentlichen bei einem bauenden Kontext.
+Und wenn ich irgendwas ändern will, lande ich typischerweise eben auch bei einem bauenden Kontext.
+Es ist klar, dass irgendwelche Änderungen vielleicht auch mehrere bauende Kontexte umfassen, aber das ist eher die Ausnahme.
+Also ist das, so würde ich behaupten, eine gute Architektur, bei der das eben tatsächlich gut aufteilt.
+Herausforderungen.
+Denkst du an Systeme, weil die haben halt häufig andere Modelle.
+Wenn ich Leuten etwas erzähle über bauenden Kontexte, kommen meistens solche irgendwelche Wege, wie diese Systeme strukturieren.
+Und das ist halt schwierig, hinzugehen, zu konsequent die Verantwortung für irgendwelche fachlichen Features irgendwohin verlegen.
+Und das ist eben schwer, sich da sozusagen dran zu gewöhnen.
+Auch diese Generik ist für mich ein Problem.
+Es geht insbesondere um Funktionalitäten.
+Also das, was ich hier sage, ist, wir haben eben Bestellprozess, Liefern, Rechnung, Schreiben.
+Und wir haben gerade nicht Ware, Kunde oder sowas.
+Also wir sind bei Funktionalitäten, wir sind nicht bei Daten.
+Und die Ergebnisse sind jetzt eben bauende Kontexte als Modelle für diese Business-Funktionalitäten.
+Kleine, lose, gekoppelte Modelle.
+Eine Änderung wird nur ein Modell erschlagen.
+Was eben bedeutet, dass ich dort eine lose Kopplung habe.
+Ich habe eine Episode gemacht zum Thema bauenden Kontext, wo ich zeige, dass das halt nochmal deutlich schwieriger ist.
+Das Konzept ist ein bisschen ambivalent.
+Wir haben hier ja schon zwei Sachen gesehen.
+Ein bauender Kontext ist etwas, was eine Sprache definiert, wo eine Sprache gültig ist.
+Ist aber auch etwas, wo ein Modell gültig ist.
+Und dann kommt noch als drittes hinzu, dass wir dort eben tatsächlich über etwas reden, was Teams typischerweise beschäftigt.
+Und dann ist der Begriff sehr stark überladen.
+Und das führt dann in der Praxis manchmal zu Schwierigkeiten.
+Jan hat geschrieben, ich habe mal den Leitsatz gehört, dass man erst dreimal etwas implementiert haben soll.
+Ich meine, es war allgemeinheit.
+Ging eher in Richtung von Reviews.
+Da ging es genau um dieses Thema mit Bert-Jan Schriever über Generic oder Specific.
+Da hat er genau das gesagt.
+Das ist also eine Maßregel, die man haben kann.
+Hier sieht man, dass eigentlich die Frage ist, was ist fachlich korrekt.
+Also, es ist fachlich korrekt zu sagen, sowas wie eine Rechnungsregelung und so etwas wie eine Rückgabe, das ist eigentlich dasselbe.
+Oder ist das fachlich nicht korrekt?
+Das ist eigentlich die Diskussion, die ich führen würde.
+Wie wichtig ist es, die richtigen Fragen zu stellen?
+Das ist super wichtig, klar.
+Allgemeinheit im Beratungsbusiness ist ein wichtiges Thema.
+Auch eben beim Erstellen des Portals.
+Frage zweiter schreibt, ein Browser macht Request an einen Port.
+Der Port ist in einer Applikation.
+Wo ist hier das nicht technische?
+Ist der Sticky der Request?
+Ja, guter Punkt.
+Tatsächlich meine ich damit ein Request im Sinne eines HTTP-Requests oder auch eines Methodenaufrufs.
+Was ich damit meine ist, eine Fachlichkeit ist typischerweise in einbauernden Kontext implementiert.
+Darum geht es mir.
+Das bedeutet, wenn diese Fachlichkeit genutzt wird, dann lande ich damit bei einbauernden Kontext, bei einem Modul.
+Marc schreibt dann halt ein Request einbauernden Kontext, ein Team, ein Modul.
+Gilt das immer noch?
+Ja, vielleicht.
+Darüber hatte ich ja gesprochen.
+Ein Team kann mindestens mehrbauernde Kontexte verwalten.
+In Wirklichkeit ist es komplizierter.
+Aber eigentlich wollten wir immer noch ganz gerne in diese Richtung, weil wir dann eine gute fachliche Aufteilung des Systems haben.
+Gut, dann machen wir hier weiter.
+Das, worum es jetzt als nächstes geht, ist die Geschichte mit der Core-Domain.
+Warum ist das relevant?
+Weil wir den Fokus verstehen müssen.
+Wir müssen verstehen, was für uns besonders wichtig ist.
+Diese Core-Domain ist typischerweise die Motivation für das Projekt.
+Da reduzieren wir jetzt die Komplexität dieses Modells.
+Insbesondere für diesen Teil wollen wir reduzieren, damit das besonders gut wartbar und änderbar ist.
+Dort soll auch die besonders gute Wartbarkeit sein.
+### Core-Domain und Subdomains
+
+Wir können uns jetzt in diesem System die Frage stellen, wo mag denn hier die Core-Domain sein?
+Wir haben Order, Process, Invoicing und Delivery zur Auswahl.
+Wie gesagt, das ist ein Vortrag, den ich öfter gehalten habe.
+Ihr könnt euch jetzt mal kurz überlegen, was ihr denkt, was die Core-Domain ist.
+Die meisten Menschen sagen, dass der Bestellprozess das ist, was die Core-Domain ist.
+Vermutlich deswegen, weil da das Geld reinkommt.
+Unsere Differenzierung ist, dass wir schnell und zuverlässig liefern.
+Tatsächlich kriege ich in letzter Zeit öfter mal Werbespots von einer Firma zu sehen, die genau das verspricht.
+Sie versucht, dadurch zu differenzieren.
+Deswegen wäre jetzt die Core-Domain dieser Delivery-Prozess.
+### Priorität der Core-Domain
+
+Wir sagen hier möchte ich gerne besonders gut sein im Delivery-Prozess.
+Das soll besonders gut änderbar sein.
+Damit ist das eben die Core-Domain.
+Der Rest wären jetzt Generic-Subdomains.
+Also Dinge, die man einfach im Extremfall kaufen kann, die also tatsächlich völlig generisch sind.
+Oder vielleicht Supporting-Subdomains, wenn die kompliziert sind.
+Ich sie selber baue und die die Kernfunktionalität ergänzen sollen.
+Tatsächlich habe ich in einem Projekt gesessen, wo wir genau diesen Bestellprozess gekauft haben.
+Das gibt es nämlich bei Shopify einfach.
+Das, worauf wir uns fokussiert haben, war der Produkt-Configurator, der wahnsinnig kompliziert war.
+Das ist genau so ein Beispiel, wo wir jetzt sprechen über die Core-Domain, die in dem Fall der Produkt-Configurator war.
+Der Bestellprozess ist ein Generic-Subdomain.
+Also im Gegensatz zu dem, was die Mehrheit sagt.
+Eurer Prozess muss nicht unbedingt die Core-Domain sein.
+Könnte theoretisch sein, aber ich weiß es nicht.
+Wenn wir das herausbekommen, dann haben wir einen klaren Fokus dort.
+Wir haben auch ein besseres Verständnis der Domäne.
+Was wir dadurch bekommen, strategisch weiß ich, wenn ich technische Verantwortung übernehme, Lieferprozess ist wichtig.
+Darum muss ich mich ernsthaft kümmern.
+Das ist wirklich schlecht, wenn das nicht vernünftig funktioniert.
+Ich habe verstanden, wir unterscheiden uns durch den Lieferprozess.
+Das bedeutet, ich habe verstanden, wie mein Domänenansatz aussieht.
+Das ist ja nochmal eine zusätzliche Information.
+Das ist dort der Vorteil.
+Da scheinen keine Fragen zu sein.
+Dann würde ich mich an der Stelle einfach weitermachen und weiter vorgehen zu Strategic Design.
+Da ist die Frage, nicht irgendwie müssen Teams miteinander kollaborieren.
+## Zusammenarbeit zwischen Teams
+
+Insbesondere ist es so, dass wir die Core-Domain haben.
+Die Core-Domain muss jetzt irgendwie unterstützt werden durch die anderen Teile des Systems.
+## Strategisches Design in DDD
+
+Das heißt also, wir müssen jetzt noch dafür sorgen, dass diese Core-Domain erfolgreich ist.
+Meine Behauptung ist, das kriegen wir nicht hin, nur mit Architekturhilfsmitteln.
+Wir haben den Lieferprozess.
+Der Lieferprozess ist zum Beispiel darauf angewiesen, dass der Information von dem Bestellprozess kommt.
+Ich kann nichts liefern, wenn ich nicht weiß, wie die Bestellung aussieht.
+Damit muss der Bestellprozess eine eine Schnittstelle anbieten für den Lieferprozess und wenn sich etwas ändert, muss der Lieferprozess auch dementsprechend nachziehen.
+Der Bestellprozess muss dem Lieferprozess die richtigen Informationen zur Verfügung stellen.
+Der Lieferprozess muss höher priorisiert sein und muss das Andere beeinflussen können.
+Der Lieferprozess müsste zum Bestellprozess gehen können und sagen können, ihr schickt mir eine Schnittstelle mit Informationen, ich brauche mehr Informationen.
+Dann muss der Lieferprozess sagen, alles klar, das implementieren wir, weil du bist wichtiger als wir.
+Lieferprozess ist das, womit wir uns differenzieren.
+Das ist genau das, was Strategic Domain-Driven Design jetzt eigentlich umsetzt.
+Wir müssen die Core-Domain priorisieren auf dieser organisatorischen Ebene.
+Wir können architekturell nichts machen.
+Wir müssen sagen, ihr seid wichtiger.
+Das ist genau das, was Strategic Design sagt.
+Strategic Design hat Patterns, die sich mit Kollaboration herumschlagen, also zum Beispiel Customer-Supplier.
+Da würde jetzt das Supplier-Team der Bestellprozess dem Kunden-Team dem Lieferprozess unterstützen.
+Das würde folgendes bedeuten, ich habe das Team für den Bestellprozess und ich habe das Team für den Lieferprozess und ich sage jetzt, du liebes Team, dass du verantwortlich bist für den Lieferprozess.
+Du bist der Kunde für das andere Team.
+Das heißt, du kannst sagen, ich möchte folgende Dinge haben und dann werden diese Dinge gebaut.
+Da gibt es natürlich Verhandlungen darüber, wie genau das passieren soll.
+Da wird diskutiert über Budget, wie lange es dauert.
+Wir müssen über Testing reden, wie weit die Schnittstelle testen usw.
+Aber im Wesentlichen ist dieses Team für den Bestellprozess in einer Hilfsfunktion für den Lieferprozess.
+Das Gegenteil davon wäre das Conformist-Pattern.
+Da würde das Team, in diesem Fall also der Bestellprozess, dafür sorgen, dass der Lieferprozess in einer Conformist-Rolle ist.
+Der Lieferprozess muss mit dem leben, was da ist.
+Das kann sich z.B. dadurch ergeben, dass man sagt, ich will ja gerne ändern.
+Ich will euch ja gerne andere Informationen zur Verfügung stellen.
+Ich will euch gerne unterstützen.
+Ich kann es halt nicht, weil unsere Software unänderbar ist.
+Dann bin ich in einer Conformist-Rolle.
+Dann bedeutet das nämlich, dass ich damit leben muss, was auch immer mir geliefert wird.
+Das ist ein Ergebnis von Core-Domain.
+Das ist das, was jetzt eigentlich der Impact von Core-Domain ist.
+Und mein Problem hier ist, also soweit ist das alles logisch.
+Ich sage also, der Lieferprozess ist die Core-Domain.
+Ich versuche daraus einen Customer zu machen für den Supplier-Bestellprozess und so weiter.
+Die Herausforderungen, die ich da sehe, sind, dass es schwer ist, das auf die Reihe zu bekommen.
+Es ist relativ kompliziert.
+Ich habe hier jetzt zwei Patterns gezeigt, weil ich keine Lust hatte, die zehn Patterns oder was auch immer es sind, komplett alle aufzumalen.
+Es ist halt auch nicht sonderlich intuitiv.
+Diese beiden Patterns sind noch intuitiv, aber es gibt dann Patterns, die andere Dinge definieren.
+Die zum Beispiel sagen, so etwas wie Published Language.
+Das hat wenig mit Priorisierung zu tun.
+Da rede ich plötzlich über Datenstrukturen.
+Deswegen ist es für mich so, dass ich da insgesamt pessimistisch bin, weil es eben nicht intuitiv ist.
+Es wirkt zu kompliziert.
+Das ist keine abstrakte Kritik, sondern das führt eben tatsächlich dazu, dass es meiner Ansicht nach wenig adaptiert wird.
+Also es ist tatsächlich so, dass es zu echten Schwierigkeiten führt, weil es eben für Menschen schwierig ist, das umzusetzen.
+Der andere Punkt ist, hier wird eigentlich nur über Teams gesprochen.
+Wir bauen eine Kontexte über Akkern.
+Wenn ich jetzt zum Beispiel so eine Entwicklungsplattform baue, dann baue ich ja keinen Bau einer Kontexte.
+Das ist streng genommen nicht mehr Teil dieser Patterns, weil ich eben keinen Bau einer Kontexte baue.
+Das ist mindestens konzeptionell auch problematisch, weil ich Teams habe, die sich um andere Dinge kümmern, nicht nur um Bau einer Kontexte.
+Deswegen finde ich mittlerweile Strategic Design auch schwierig.
+Frage 2 hat gefragt, ob man Ergebnisse von DDD noch in Schichtarchitektur bilden kann.
+Dazu diskutieren wir beim nächsten Mal.
+Tatsächlich ist Layers ein DDD-Pattern.
+Frage 3 hat geschrieben, viele Architekten verwenden den Begriff Business Capabilities.
+Das scheint so etwas wie eine Task-Definition zu sein.
+Kommt das bei dir in deinem Ansatz auch als Begrifflichkeit vor?
+Nein, tut es nicht.
+Das ist auch Domain-Domain-Design by the book.
+Also Business Capabilities ist etwas, was ich aus Enterprise-Architekturmanagement kenne.
+Wenn ich sage, dass das mit dem Strategic Domain-Domain-Design ein bisschen problematisch ist, dann fühle ich mich dazu verpflichtet, zu sagen, wie ich es besser machen kann.
+Dazu möchte ich noch mal kurz auf Team Topologies eingehen.
+Teams müssen jetzt miteinander kollaborieren.
+Team Topologies ist meiner Ansicht nach eben nicht so super kompliziert.
+Es ist relativ intuitiv.
+Ich zumindest finde es klarer.
+Es enthält mehr Fracture-Plans als nur bauende Kontexte, also zum Beispiel auch so etwas wie Location.
+Dort wird nicht gesagt, wir teilen die Teams nur nach Fachlichkeiten auf, sondern da wird gesagt, es gibt auch andere Sachen, wie zum Beispiel, wenn Teams irgendwo zusammensitzen oder Menschen zusammensitzen, dann können sie vielleicht eher ein Team bilden.
+In Zeiten von Remote-Arbeit ist das etwas, was vielleicht zunehmend weniger wichtig wird.
+Wenn man sich gemeinsam in einem Raum treffen kann, ist das häufig ein Vorteil.
+Wir reden über mehr als nur Entwicklungsteams.
+Was gibt es dort?
+Es gibt Stream-Aligned Teams.
+Stream-Aligned Teams sind Teams, die an einem Änderungsstrom den vollständig abdecken, also von Anforderungen bis in die Produktion.
+Dann gibt es Enabling Teams, Teams, die diese Stream-Aligned Teams dabei unterstützen, um Fähigkeiten aufzubauen.
+Dann gibt es Plattform-Teams, die eine Plattform anbieten, Kubernetes, CI, vielleicht auch etwas Geschäftsmäßiges, also vielleicht ein Bezahlsystem oder so.
+Komplizierte Subsystem-Teams, die komplizierte Algorithmen umfassen.
+In meinem Beispiel gibt es verschiedene Kollaborationsmöglichkeiten.
+Access to Service bedeutet, dass ich eine Schnittstelle implementiere.
+Das könnte ein kompliziertes Subsystem tun oder ein Plattform-Team.
+Diese Schnittstelle könnte entweder programmatisch sein oder eine Schnittstelle, die ich über eine Benutzeroberfläche benutzen kann.
+Dann gibt es etwas wie Facilitating, dass ich mir anschaue, was die Teams in einem bestimmten Bereich zu tun haben und sie dabei unterstütze.
+Kollaboration bedeutet sogar, dass ich jemanden ausleihe, der dann aktiv mit diesem Team zusammenarbeitet an einer bestimmten Herausforderung.
+Das können wir jetzt auf unserem Fall unterbrechen.
+Das heißt, ich habe Invoicing, Bestellprozess und den Lieferprozess.
+Dann habe ich ein Ding, das sagt, wie ich Sachen herausliefern möchte.
+Das ist die Logik für diese Nachlieferung.
+Die bieten jetzt eine Schnittstelle an Access to Service hin für die Lieferung.
+Das heißt, dieses Team hier ist verantwortlich für eine Änderung, die dort passiert, von der Analyse bis zur Produktion.
+Die bieten jetzt ein Ding an, dem ich sage, der E-Mart hat folgende Dinge bestellt, was auch immer es sein mag, einen Laptop und eine Waschmaschine.
+Wie kriege ich das zu ihm geliefert?
+Dann wird das System sagen, bedauerlicherweise müssen wir eine Spedition für die Waschmaschine losschicken und den Laptop müssen wir extra machen, wenn es etwas anderes gewesen wäre.
+Wenn ich zwei Laptops bestellt hätte, hätte das vielleicht zusammengefasst, was auch immer da passiert.
+Das ist tatsächlich ein sehr spezifischer Algorithmus.
+Da kann man sich vorstellen, dass es sehr kompliziert ist, den umzusetzen.
+Das wird diesem Team angeboten als reine Fachlichkeit.
+In bauenden Kontexten ist das vielleicht derselbe bauende Kontext, diese Optimierung und der Lieferprozess.
+Hier trennen wir es, weil wir sagen, dieser Algorithmus ist so kompliziert.
+Das ist etwas, was dieses andere Team hat erledigt.
+Dann haben wir das Kubernetes-CI-Team.
+Das bietet Kubernetes-Cluster an und sorgt dafür, dass man die über eine Webseite buchen kann oder über eine Schnittstelle.
+Dann gibt es das Architektur-Team, was entweder dafür sorgt, dass die anderen Teams Architekturskills aufbauen oder vielleicht auch mal jemanden ausleihen, um dafür zu sorgen, dass dort ein Architekturproblem gelöst wird.
+Wir setzen uns gemeinsam hin und bauen das Ding fertig, damit das Team diesen Skill aufbaut.
+Gleichzeitig ist das ein Feedback-Kanal.
+Das heißt, ich kriege mit, wo Schwierigkeiten sind.
+Ich kriege als Architektur-Team auch mit, wo ich besser werden muss.
+Das Team-Setup ist damit definiert und auch die Kollaborationen sind definiert.
+Herausforderung noch, das sind Magnete.
+Das ist ein Zielbild.
+Ich habe dazu eine Episode gemacht.
+Hier ist das Plakat, was die Lisa erstellt hat.
+Dafür kann man sich da auch herunterladen.
+Da kann man sich das eine Stunde angucken.
+Ich habe mit der Kim zusammen ein paar Praxisthinge dazu diskutiert.
+Da möchte ich jetzt noch mal eingehen auf dieses Problem mit den Org-Charts.
+Beispiel, ich habe jetzt Streamline-Teams und ich will in einem Plattform-Team irgendwelche gemeinsamen Funktionalitäten übernehmen.
+Irgendwelche Geschäfts-Funktionalitäten.
+Das ist eine Geschichte, wo ich sagen würde, abstrakt kann das vielleicht Sinn machen.
+Das bedeutet, dass ich jetzt aus einer Architektur-Perspektive sagen kann, wir untersuchen das.
+Das sind tatsächlich gemeinsame Funktionalitäten.
+Wir implementieren das einmal zentral.
+Das war hier die Frage, ob wir ein Plattform-Team involvieren sollen.
+Da gibt es ja gemeinsame Funktionalitäten und das macht vielleicht Sinn.
+Aber da war es eine toxische Umgebung.
+Probleme sind nicht kommuniziert worden.
+Wenn man gesagt hat, ich habe übrigens Probleme, dann hat es entsprechend eine Strafe gegeben.
+Das führt jetzt zu folgendem Problem.
+Wenn ich mich jetzt hinsetze und sage, ich bin ein Streamline-Team und ich will diese Plattform benutzen, dann kann ich dem Plattform-Team nicht vertrauen, weil die ihre Probleme nicht offen kommunizieren werden.
+Das heißt, die werden ihre Probleme eher verstecken.
+Dann habe ich ein Risiko, weil ich bin halt ein Streamline-Team.
+Ich muss halt irgendwelche Ziele erreichen und ich bin jetzt abhängig von diesem Plattform-Team.
+Vielleicht erreiche ich die nicht wegen des Plattform-Teams.
+Dann habe ich das Problem, dass ich als Streamline-Team dafür bestraft werde und ich habe offiziell versagt.
+Dann werde ich wahrscheinlich sagen, ich baue die Plattform selber, weil dann habe ich sie unter Kontrolle.
+Dann weiß ich, dass ich ein Problem habe.
+Ich kann es managen.
+Das ist eine Entscheidung, die völlig unabhängig ist von der Frage, ob das fachlich Sinn macht, sondern die nur davon getrieben ist, dass ich versuche, meine Risiken zu managen.
+Das bedeutet, dass wir hier vielleicht auch ein allgemeineres Problem haben.
+Menschen arbeiten eben nicht notwendigerweise so, wie es in den Orgcharts steht.
+Das heißt, ich muss diese Probleme erstmal lösen.
+Wir haben informelle Kommunikationskanäle.
+Ich kann mit irgendwelchen Leuten informell reden.
+Ich kann dafür sorgen, dass die das lösen.
+Das ist dann ein Thema, bei dem wir ganz viele Episoden gemacht haben.
+Zum Beispiel haben wir auch zu Fair Dischange, die ich für mich arbeiten lassen kann.
+Aber das ist auf einer anderen Ebene etwas.
+Ich habe diese Folie noch eingefügt, weil eine Orgchart zu malen, so wie das gesagt wird bei Team Topologies, ist nicht ausreichend.
+Das Problem mit Orgcharts ist eine Kapitelüberschrift aus dem Team Topologies Buch.
+Leider gibt es immer wieder Stress bei den Zuständigkeiten in den verschiedenen Teams bei dem Ansatz.
+Vielleicht ist das eine Ursache dafür.
+Diese informellen Kanäle und was ist überhaupt eine Zuständigkeit.
+Das ist etwas, was auch tatsächlich im Consulting auf dem Thema ist.
+Teamzuständigkeiten klären.
+Ich bin nicht sicher, ob ich das durch Orgchart malen auf die Reihe bekomme.
+Jan hat es gerade geschrieben.
+Orgchart ist kein Kommunikationschart.
+Das ist etwas, weswegen ich dieses Beispiel gewählt habe.
+Ich habe mir gesagt, es macht vielleicht Sinn, dieses Plattform-Team zu haben, aber durch Misstrauen ist es vielleicht so, dass ich es tatsächlich nicht umsetzen kann.
+Dann habe ich da letztendlich ein Problem.
+Frage zweierlei.
+Eidenrationalitäten.
+Jedes Team hat Eigenrationalitäten.
+Dadurch entstehen Risiken für andere Teams und Vorteile.
+Wir haben diese Episode gemacht, zusammen mit meinem Kollegen Michael, über dieses Thema mit Unternehmenspolitik.
+Eigenrationalität und die eigenen Ziele abzuwägen gegeneinander ist ein wesentlicher Punkt für Unternehmenspolitik, um diesen Ausgleich hinzubekommen.
+Ich glaube, dass das in Wirklichkeit vielleicht auch noch ein bisschen weitergeht.
+Es kann sein, dass einige Teams, deswegen habe ich dieses toxische Beispiel gewählt, tatsächlich nicht hilfreich sind.
+Vielleicht sind sie gezwungen durch Umgebung.
+Im Extremfall kann es sogar so sein, dass es einen Wettbewerb gibt und eine unangenehme Gesamtsituation, die dazu führt, dass es einen destruktiven Wettbewerb gibt.
+Das würde ich nicht ausschließen.
+Dann habe ich aber ein ganz anderes Set von Problemen.
+Das ist sicherlich nicht mit Orgcharts lösbar.
+Dann gibt es vielleicht auch auf dieser Ebene keine ernsthafte Lösung.
+Der Philipp Spocher schreibt, wie identifiziert man die Streams?
+Gibt es dafür Methoden, heuristiken?
+Um es nochmal zu sagen, diese Streams sind Änderungsstreams.
+Das heißt, das geht von Anforderung bis hin dazu, dass irgendwas umgesetzt wird, wenn es um Produktion geht.
+Im Wesentlichen sind das Streams, die dafür sorgen, dass wir etwas umsetzen können und es bis in Produktion geht.
+Das Besondere bei Team Topologies ist, dass es dort eine Vielzahl von Fracture Plans gibt, die ganz unterschiedliche Dinge solchen Stream-Aligned Teams zuweisen können.
+Hier haben wir gesehen, es gibt z.
+B. eine Kontexte.
+Ich finde, das ist ein ganz gutes Modell.
+Ich könnte z.
+B. auch so etwas haben wie Personas, also Neukunden versus Bestandskunden.
+Das wäre eine Möglichkeit.
+Ich kann z.
+B. auch so etwas haben wie eine UI.
+Mit einer UI kann ich auch sagen, ich möchte diese Änderung.
+Dann gebe ich das bis in Produktion durch.
+Das könnte ein Stream-Aligned Team machen.
+Das bedeutet, diese Stream-Aligned Teams sind eigentlich sehr flexibel, weil das bedeutet, dass fast beliebige Änderungskanäle oder Änderungsströme dort denkbar sind.
+Deswegen ist noch die Frage, wie man diese Teams identifiziert.
+Das ist nicht die Frage.
+Ich weise diesen Teams etwas zu.
+Team Topologies ist tatsächlich relativ flexibel.
+Frage 2.3 schreibt, schön, dass du Umgebungsvorkehr hattest.
+Mit Einbruchs bitte Antwort bei dem Eigenrationalitätsthema.
+Vielen Dank.
+Auch danke.
+Da war noch mehr positives Feedback und Menschen, die Likes dalassen.
+Vielen Dank dafür auch.
+Dann wären wir so weit tatsächlich durch.
+Wir können noch mal den Blick nach vorne wagen.
+Da gibt es am 29., das ist die übernächste Woche, die Episode mit Lars.
+Ralf spricht mit Lars zum Thema Generative AI beams Software Architecture.
+Dann wird es wohl Freitag eine Episode geben, wo ich das hier fortsetze und dann über taktisches Domain-To-Design spreche.
+Ich will nicht ausschließen, dass es eine dritte Episode dazu noch geben wird.
+Das werden wir dann sehen.
+Hängt davon ab, wie es da weitergeht.
+Ich schaue noch mal kurz, ob ich etwas vergessen habe.
+Das scheint aber nicht der Fall zu sein.
+Dann würde ich sagen, vielen Dank fürs Zuschauen.
+Vielen Dank für das positive Feedback.
+Vielen Dank für die Fragen.
+Dann sehen wir uns beim nächsten Mal.
+Bis dahin.
