@@ -14,7 +14,7 @@ Like semiconductors and pharmaceuticals, software development is moving from cra
 Modularity, clear specifications, static analysis, test-driven development—the practices we've known for decades aren't old news. They're *essential* when AI produces code at scale. You can't rewrite everything from scratch.
 
 **The 9x Difference**
-Companies moving 9x faster than average? They're not writing more tests. They're architecting their pipelines to reduce friction, moving evaluations left (inner loop), and building platform teams that engineer the harness itself.
+Companies moving 9x faster than the median? They don't make fewer mistakes. They catch them earlier: modular code, fewer merge conflicts, checks moved left into the inner loop, fewer CI iterations.
 
 **Key Takeaway:** Your role is evolving from *programmer* to *developer*—from typing code to solving problems, defining specs, and architecting systems that can safely leverage AI at scale.
 
